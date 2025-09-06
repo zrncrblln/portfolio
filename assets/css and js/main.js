@@ -1,6 +1,11 @@
 document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', function(e) {
         const targetId = this.getAttribute('href').slice(1);
+        if (targetId === 'home') {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            return;
+        }
         const target = document.getElementById(targetId);
         if (target) {
             e.preventDefault();
