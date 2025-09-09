@@ -157,7 +157,9 @@ a {
     display: inline-block;
     position: relative;
     vertical-align: bottom;
-    transition: opacity 1s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+    /* smooth fade */
+    opacity: 1;
 }
 
 .glow-heading {
@@ -434,6 +436,9 @@ section .glow-heading {
     will-change: transform;
     padding: 20px 0;
     display: flex;
+    transition: opacity 0.3s ease;
+    /* smooth fade */
+    opacity: 1;
 }
 
 .certificate-card {

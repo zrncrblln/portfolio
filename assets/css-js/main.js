@@ -30,25 +30,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const texts = ['Computer Engineer', 'Web Developer'];
     let index = 0;
-    let duration = 1000; // fade duration in ms
+    const intervalDuration = 3000; // time between text changes
 
     function fadeOutIn(element, newText) {
-        element.classList.add('fade-out');
+        element.style.opacity = 0; // fade out
+
         setTimeout(() => {
             element.textContent = newText;
-            element.classList.remove('fade-out');
-            element.classList.add('fade-in');
-        }, duration);
-        setTimeout(() => {
-            element.classList.remove('fade-in');
-        }, duration * 4);
+            element.style.opacity = 1; // fade in
+        }, 500); // match with CSS transition duration
     }
 
     setInterval(() => {
         index = (index + 1) % texts.length;
         fadeOutIn(toggleTitle, texts[index]);
-    }, duration * 4);
+    }, intervalDuration);
 });
+
 
 
 class CardCarouselLoop {
@@ -66,7 +64,7 @@ class CardCarouselLoop {
         this.calculateCardWidth();
         window.addEventListener('resize', () => this.calculateCardWidth());
 
-        this.renderPage();
+        this.renderPage(true); // initial render
 
         this.prevBtn.addEventListener('click', () => this.prevPage());
         this.nextBtn.addEventListener('click', () => this.nextPage());
@@ -77,29 +75,38 @@ class CardCarouselLoop {
             const style = window.getComputedStyle(this.cards[0]);
             const marginRight = parseFloat(style.marginRight) || 0;
             this.cardWidth = this.cards[0].getBoundingClientRect().width + marginRight;
-            this.renderPage();
+            this.renderPage(true);
         }
     }
 
-    renderPage() {
-        // Clear carousel
-        this.carousel.innerHTML = '';
-
-        const startIndex = this.currentPage * this.cardsPerPage;
-        const pageCards = [];
-
-        for (let i = 0; i < this.cardsPerPage; i++) {
-            // Loop around if we reach the end
-            const index = (startIndex + i) % this.cards.length;
-            const clone = this.cards[index].cloneNode(true);
-            pageCards.push(clone);
+    renderPage(initial = false) {
+        if (!initial) {
+            // Fade out
+            this.carousel.style.opacity = 0;
         }
 
-        pageCards.forEach(card => this.carousel.appendChild(card));
+        setTimeout(() => {
+            // Clear carousel
+            this.carousel.innerHTML = '';
 
-        // Optional: animate slide
-        this.carousel.style.transition = 'transform 0.5s ease';
-        this.carousel.style.transform = `translateX(0)`;
+            const startIndex = this.currentPage * this.cardsPerPage;
+            const pageCards = [];
+
+            for (let i = 0; i < this.cardsPerPage; i++) {
+                const index = (startIndex + i) % this.cards.length;
+                const clone = this.cards[index].cloneNode(true);
+                pageCards.push(clone);
+            }
+
+            pageCards.forEach(card => this.carousel.appendChild(card));
+
+            // Fade in
+            this.carousel.style.opacity = 1;
+
+            // Optional: reset transform (if needed)
+            this.carousel.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            this.carousel.style.transform = `translateX(0)`;
+        }, initial ? 0 : 300); // wait for fade-out duration
     }
 
     nextPage() {
@@ -123,4 +130,3 @@ class CardCarouselLoop {
 document.addEventListener('DOMContentLoaded', () => {
     new CardCarouselLoop();
 });
-
