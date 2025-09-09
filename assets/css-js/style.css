@@ -13,6 +13,7 @@ body {
     line-height: 1.6;
     position: relative;
     overflow-x: hidden;
+    padding: 40px 20px;
 }
 
 /* Background Grid Pattern */
@@ -29,7 +30,6 @@ body::before {
         linear-gradient(90deg, rgba(62, 198, 255, 0.06) 1px, transparent 1px),
         linear-gradient(180deg, rgba(62, 198, 255, 0.06) 1px, transparent 1px);
     background-size: 60px 60px;
-    /* Soft glow overlay */
     box-shadow: 0 0 200px 60px #3ec6ff22 inset;
 }
 
@@ -132,7 +132,8 @@ a {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    padding: 0 0 60px 0; /* Reduced top padding to remove margin at top */
+    padding: 0 0 60px 0;
+    /* Reduced top padding to remove margin at top */
     min-height: 60vh;
     position: relative;
 }
@@ -157,14 +158,6 @@ a {
     position: relative;
     vertical-align: bottom;
     transition: opacity 1s ease-in-out;
-}
-
-.fade-out {
-    opacity: 0;
-}
-
-.fade-in {
-    opacity: 1;
 }
 
 .glow-heading {
@@ -232,19 +225,6 @@ a {
     transition: background 0.2s, color 0.2s, box-shadow 0.2s;
 }
 
-.hero-image {
-    flex: 1 1 320px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 220px;
-}
-
-.accent-glow {
-    color: #3ec6ff;
-    filter: drop-shadow(0 0 24px #3ec6ff88);
-}
-
 /* Section Styles */
 section {
     margin: 70px 0 100px 0;
@@ -269,6 +249,27 @@ section .glow-heading {
 .about p {
     color: #b0c4d8;
     font-size: 1.1rem;
+    text-align: justify;
+}
+
+.about ul {
+    color: #b0c4d8;
+    font-size: 1.1rem;
+    text-align: justify;
+    max-width: 700px;
+    margin: 20px auto 70px auto;
+    padding-left: 20px;
+}
+
+.about h3 {
+    margin-top: 30px;
+    margin-bottom: 12px;
+    font-size: 1.5rem;
+}
+
+.about ul {
+    list-style: none;
+    padding-left: 0;
 }
 
 /* Projects Section */
@@ -288,12 +289,10 @@ section .glow-heading {
     background: #16243a;
     border-radius: 16px;
     padding: 32px 24px;
-    width: 260px;
+    width: 240px;
+    min-height: 300px;
     box-shadow: 0 4px 24px #3ec6ff22, 0 0 24px #3ec6ff33;
     text-align: center;
-    transition: transform 0.2s, box-shadow 0.2s;
-    position: relative;
-    z-index: 1;
 }
 
 .project-card:hover {
@@ -384,6 +383,210 @@ section .glow-heading {
 }
 
 /* Responsive Design */
+@media (max-width: 1200px) {
+    .hero-content {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+
+    .hero-rect-img {
+        max-width: 100%;
+        height: auto;
+        margin: 20px auto 0 auto;
+        display: block;
+    }
+
+    .project-card {
+        width: 45%;
+        margin: 0 auto;
+    }
+}
+
+/* Certificate Carousel Styles */
+.certificates-section {
+    margin: 50px 0;
+}
+
+.certificates-carousel-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 0 60px;
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+.certificates-carousel {
+    display: flex;
+    gap: 30px;
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform;
+    padding: 20px 0;
+}
+
+.certificate-card {
+    flex: 0 0 calc((100% - 120px) / 5);
+    /* 5 cards visible */
+    background: #16243a;
+    border-radius: 16px;
+    padding: 32px 24px;
+    box-shadow: 0 4px 24px #3ec6ff22, 0 0 24px #3ec6ff33;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+    position: relative;
+    z-index: 1;
+    opacity: 1;
+    min-width: 300px;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.certificate-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 8px 32px #3ec6ff44, 0 0 32px #3ec6ff88;
+}
+
+.certificate-card h4 {
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+    font-weight: bold;
+    color: #e6e6e6;
+}
+
+.certificate-card p {
+    font-size: 0.98rem;
+    color: #b0c4d8;
+    line-height: 1.4;
+}
+
+
+/* Navigation Buttons */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #3ec6ff;
+    border: none;
+    color: #101c2c;
+    font-size: 2rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 12px 2px #3ec6ff88;
+    transition: all 0.3s ease;
+    user-select: none;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-btn:hover {
+    background-color: #fff;
+    box-shadow: 0 0 24px 4px #3ec6ffcc;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.prev-btn {
+    left: 0;
+}
+
+.next-btn {
+    right: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .certificate-card {
+        flex: 0 0 calc((100% - 60px) / 3);
+        /* 3 cards on tablets */
+    }
+
+    .certificates-carousel-wrapper {
+        padding: 0 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .certificate-card {
+        flex: 0 0 calc((100% - 30px) / 2);
+        /* 2 cards on mobile */
+    }
+
+    .certificates-carousel-wrapper {
+        padding: 0 40px;
+    }
+
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .certificates-carousel-wrapper {
+        padding: 0 35px;
+    }
+
+    .certificate-card {
+        padding: 24px 16px;
+        min-height: 180px;
+    }
+
+    .certificate-card h4 {
+        font-size: 1.1rem;
+    }
+
+    .certificate-card p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .certificate-card {
+        flex: 0 0 calc((100% - 30px) / 2);
+        /* 2 cards on mobile */
+    }
+
+    .certificates-carousel-wrapper {
+        padding: 0 40px;
+    }
+
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .certificates-carousel-wrapper {
+        padding: 0 35px;
+    }
+
+    .certificate-card {
+        padding: 24px 16px;
+        min-height: 180px;
+    }
+
+    .certificate-card h4 {
+        font-size: 1.1rem;
+    }
+
+    .certificate-card p {
+        font-size: 0.9rem;
+    }
+}
+
 @media (max-width: 900px) {
     .hero {
         flex-direction: column;
@@ -399,6 +602,10 @@ section .glow-heading {
 
     .nav-links {
         gap: 16px;
+    }
+
+    .certificate-card {
+        flex: 0 0 80%;
     }
 }
 
