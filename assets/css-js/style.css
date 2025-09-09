@@ -6,14 +6,14 @@
 }
 
 body {
-    min-height: 100vh;
+    min-height: 100%;
     font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
     background: #0a1623;
     color: #e6e6e6;
     line-height: 1.6;
     position: relative;
     overflow-x: hidden;
-    padding: 40px 20px;
+    padding: 0 20px;
 }
 
 /* Background Grid Pattern */
@@ -132,7 +132,7 @@ a {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    padding: 0 0 60px 0;
+    padding: 0 0 70px 0;
     /* Reduced top padding to remove margin at top */
     min-height: 60vh;
     position: relative;
@@ -339,7 +339,13 @@ section .glow-heading {
     color: #e6e6e6;
     font-size: 1rem;
     box-shadow: 0 0 8px #3ec6ff22;
-    resize: none;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    width: 100%;
+    min-height: 100px;
+    max-height: 200px;
 }
 
 .contact-form input:focus,
@@ -414,6 +420,11 @@ section .glow-heading {
     padding: 0 60px;
     mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    /* smooth touch scrolling on iOS */
 }
 
 .certificates-carousel {
@@ -422,11 +433,17 @@ section .glow-heading {
     transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
     will-change: transform;
     padding: 20px 0;
+    display: flex;
 }
 
 .certificate-card {
-    flex: 0 0 calc((100% - 120px) / 5);
-    /* 5 cards visible */
+    scroll-snap-align: center;
+    flex: 0 0 auto;
+    /* fixed size, no stretching */
+    width: 300px;
+    /* same as original min-width */
+    height: 400px;
+    /* same as original min-height */
     background: #16243a;
     border-radius: 16px;
     padding: 32px 24px;
@@ -436,13 +453,12 @@ section .glow-heading {
     position: relative;
     z-index: 1;
     opacity: 1;
-    min-width: 300px;
-    min-height: 320px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     cursor: pointer;
 }
+
 
 .certificate-card:hover {
     transform: translateY(-8px) scale(1.03);

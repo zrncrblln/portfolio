@@ -51,149 +51,76 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-
-class InfiniteCertificateCarousel {
+class CardCarouselLoop {
     constructor() {
+        this.wrapper = document.querySelector('.certificates-carousel-wrapper');
         this.carousel = document.querySelector('.certificates-carousel');
-        this.cards = document.querySelectorAll('.certificate-card');
+        this.cards = Array.from(this.carousel.querySelectorAll('.certificate-card'));
         this.prevBtn = document.querySelector('.prev-btn');
         this.nextBtn = document.querySelector('.next-btn');
 
-        this.totalCards = this.cards.length;
-        this.originalCards = 5; // Number of original unique cards
-        this.currentIndex = 0;
+        this.cardsPerPage = 3;
+        this.currentPage = 0;
+
         this.cardWidth = 0;
-        this.autoScrollInterval = null;
-        this.isTransitioning = false;
-
-        this.init();
-    }
-
-    init() {
         this.calculateCardWidth();
-        this.setupEventListeners();
-        this.startAutoScroll();
-        this.updateFadeEffect();
+        window.addEventListener('resize', () => this.calculateCardWidth());
 
-        // Handle window resize
-        window.addEventListener('resize', () => {
-            this.calculateCardWidth();
-            this.updatePosition(false);
-        });
+        this.renderPage();
+
+        this.prevBtn.addEventListener('click', () => this.prevPage());
+        this.nextBtn.addEventListener('click', () => this.nextPage());
     }
 
     calculateCardWidth() {
         if (this.cards.length > 0) {
-            const cardRect = this.cards[0].getBoundingClientRect();
-            const gap = 30; // Gap between cards
-            this.cardWidth = cardRect.width + gap;
+            const style = window.getComputedStyle(this.cards[0]);
+            const marginRight = parseFloat(style.marginRight) || 0;
+            this.cardWidth = this.cards[0].getBoundingClientRect().width + marginRight;
+            this.renderPage();
         }
     }
 
-    setupEventListeners() {
-        this.prevBtn.addEventListener('click', () => this.prev());
-        this.nextBtn.addEventListener('click', () => this.next());
+    renderPage() {
+        // Clear carousel
+        this.carousel.innerHTML = '';
 
-        // Pause auto-scroll on hover
-        this.carousel.addEventListener('mouseenter', () => this.pauseAutoScroll());
-        this.carousel.addEventListener('mouseleave', () => this.startAutoScroll());
+        const startIndex = this.currentPage * this.cardsPerPage;
+        const pageCards = [];
 
-        // Handle touch/drag scrolling
-        let isDragging = false;
-        let startX = 0;
-        let startScrollLeft = 0;
-
-        this.carousel.addEventListener('mousedown', (e) => {
-            isDragging = true;
-            startX = e.pageX;
-            startScrollLeft = this.currentIndex;
-            this.carousel.style.cursor = 'grabbing';
-            this.pauseAutoScroll();
-        });
-
-        this.carousel.addEventListener('mousemove', (e) => {
-            if (!isDragging) return;
-            e.preventDefault();
-            const walk = (startX - e.pageX) / this.cardWidth;
-            const newIndex = startScrollLeft + walk;
-            this.updatePosition(false, newIndex * this.cardWidth);
-        });
-
-        this.carousel.addEventListener('mouseup', () => {
-            if (isDragging) {
-                isDragging = false;
-                this.carousel.style.cursor = 'grab';
-                this.startAutoScroll();
-                this.snapToNearest();
-            }
-        });
-
-        this.carousel.addEventListener('mouseleave', () => {
-            if (isDragging) {
-                isDragging = false;
-                this.carousel.style.cursor = 'grab';
-                this.startAutoScroll();
-                this.snapToNearest();
-            }
-        });
-    }
-
-    snapToNearest() {
-        const currentTransform = this.carousel.style.transform;
-        const currentX = currentTransform ? parseFloat(currentTransform.match(/-?\d+\.?\d*/)) : 0;
-        const newIndex = Math.round(Math.abs(currentX) / this.cardWidth);
-        this.currentIndex = newIndex;
-        this.updatePosition(true);
-    }
-
-    next() {
-        if (this.isTransitioning) return;
-        this.currentIndex++;
-        this.updatePosition(true);
-    }
-
-    prev() {
-        if (this.isTransitioning) return;
-        this.currentIndex--;
-        this.updatePosition(true);
-    }
-
-    updatePosition(animate = true, customOffset = null) {
-        if (animate) {
-            this.isTransitioning = true;
-            this.carousel.style.transition = 'transform 0.8s cubic-bezier(0.25, 1, 0.5, 1)';
-        } else {
-            this.carousel.style.transition = 'none';
+        for (let i = 0; i < this.cardsPerPage; i++) {
+            // Loop around if we reach the end
+            const index = (startIndex + i) % this.cards.length;
+            const clone = this.cards[index].cloneNode(true);
+            pageCards.push(clone);
         }
 
-        const offset = customOffset !== null ? customOffset : this.currentIndex * this.cardWidth;
-        this.carousel.style.transform = `translateX(-${offset}px)`;
+        pageCards.forEach(card => this.carousel.appendChild(card));
 
-        if (animate) {
-            setTimeout(() => {
-                this.isTransitioning = false;
-                this.handleInfiniteLoop();
-            }, 800);
-        }
-
-        this.updateFadeEffect();
+        // Optional: animate slide
+        this.carousel.style.transition = 'transform 0.5s ease';
+        this.carousel.style.transform = `translateX(0)`;
     }
 
-    handleInfiniteLoop() {
-        // Reset position for infinite loop
-        if (this.currentIndex >= this.originalCards * 2) {
-            this.currentIndex = this.originalCards;
-            this.carousel.style.transition = 'none';
-            this.carousel.style.transform = `translateX(-${this.currentIndex * this.cardWidth}px)`;
-        } else if (this.currentIndex < this.originalCards) {
-            this.currentIndex = this.originalCards * 2 - 1;
-            this.carousel.style.transition = 'none';
-            this.carousel.style.transform = `translateX(-${this.currentIndex * this.cardWidth}px)`;
+    nextPage() {
+        this.currentPage++;
+        if (this.currentPage >= Math.ceil(this.cards.length / this.cardsPerPage)) {
+            this.currentPage = 0; // loop back
         }
+        this.renderPage();
+    }
+
+    prevPage() {
+        this.currentPage--;
+        if (this.currentPage < 0) {
+            this.currentPage = Math.floor(this.cards.length / this.cardsPerPage) - 1; // loop back
+        }
+        this.renderPage();
     }
 }
 
-// Initialize carousel when DOM is loaded
+// Initialize
 document.addEventListener('DOMContentLoaded', () => {
-    new InfiniteCertificateCarousel();
+    new CardCarouselLoop();
 });
+

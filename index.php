@@ -56,70 +56,83 @@
     <section class="certificates-section">
         <button class="carousel-btn prev-btn" aria-label="Previous certificates">‹</button>
         <div class="certificates-carousel-wrapper">
-
             <div class="certificates-carousel">
                 <!-- Original cards -->
                 <div class="certificate-card">
-                    <h4>Programming</h4>
-                    <p>HTML, CSS, JavaScript, Java, Python</p>
+                    <h4>Certified Data Center Technician (CDCT)</h4>
+                    <p>Issued by EAST WEST INTERNATIONAL EDUCATIONAL SPECIALISTS, INC</p>
+                    <p>This foundational course introduces participants to the essentials of datacenter operations,
+                        including architecture, basic networking, power and cooling systems, and an introduction to
+                        cloud computing. It lays the groundwork for a career in data center management.</p>
                 </div>
                 <div class="certificate-card">
-                    <h4>Data Analytics</h4>
-                    <p>Data visualization & reporting, basic statistical analysis</p>
+                    <h4>Professionalism (US English)</h4>
+                    <p>Issued by Wadhwani Foundation</p>
+                    <p>Completed a professional development program focused on essential workplace skills, including
+                        business etiquette, time management, workplace ethics, interpersonal communication,
+                        adaptability, and problem-solving. This certification demonstrates a commitment to maintaining
+                        high standards of professionalism in diverse business environments.</p>
                 </div>
                 <div class="certificate-card">
-                    <h4>Cybersecurity & Ethical Hacking</h4>
-                    <p>Ethical hacking fundamentals, security best practices</p>
+                    <h4>Start-up Mindset (US English)</h4>
+                    <p>Issued by Wadhwani Foundation</p>
+                    <p>Completed a program designed to cultivate entrepreneurial thinking and a start-up mindset,
+                        emphasizing skills such as creativity and innovation, business strategy, decision-making, risk
+                        management, strategic planning, resiliency, and a growth-oriented approach. This certification
+                        reflects the ability to navigate dynamic business environments and contribute to innovative
+                        ventures.</p>
                 </div>
                 <div class="certificate-card">
-                    <h4>Data Center Operations</h4>
-                    <p>Data center operations, system troubleshooting, hardware/software maintenance</p>
+                    <h4>Marketing ME Live</h4>
+                    <p>Issued by Jobs180.com, Incorporated</p>
+                    <p>Attended a career-focused session covering key aspects of marketing and professional growth,
+                        including career development, personal branding, marketing fundamentals, communication, public
+                        speaking, professional networking, staff development, and team collaboration. This certificate
+                        highlights engagement in continuous learning and career skill enhancement.</p>
                 </div>
                 <div class="certificate-card">
-                    <h4>Additional Certificate</h4>
-                    <p>Continuous learning and professional development</p>
+                    <h4>Certified Ethical Hacker (CEH)</h4>
+                    <p>Issued by CISCO</p>
+                    <p>Earned certification in ethical hacking and cybersecurity practices, covering areas such as
+                        penetration testing, vulnerability assessment, network and application exploitation, IoT
+                        security, social engineering, and reporting. Demonstrates expertise in identifying and
+                        addressing security vulnerabilities using industry-standard tools and methodologies.</p>
                 </div>
                 <!-- Duplicate cards for infinite scroll -->
                 <div class="certificate-card">
-                    <h4>Programming</h4>
-                    <p>HTML, CSS, JavaScript, Java, Python</p>
+                    <h4>Python Essentials 1</h4>
+                    <p>Issued by CISCO</p>
+                    <p>Completed foundational training in Python programming, covering algorithmic and analytical
+                        thinking, procedural programming, debugging, and best practices in software development. Skills
+                        gained include basic Python coding, web development concepts, and computer programming design
+                        principles.</p>
                 </div>
                 <div class="certificate-card">
-                    <h4>Data Analytics</h4>
-                    <p>Data visualization & reporting, basic statistical analysis</p>
+                    <h4>Data Analytics Essentials</h4>
+                    <p>Issued by CISCO</p>
+                    <p>Acquired essential skills in data analysis, visualization, and storytelling. Training included
+                        working with dashboards, Microsoft Excel, SQL, and Tableau to interpret and communicate data
+                        effectively for business decision-making.</p>
                 </div>
                 <div class="certificate-card">
-                    <h4>Cybersecurity & Ethical Hacking</h4>
-                    <p>Ethical hacking fundamentals, security best practices</p>
+                    <h4>Introduction to Data Science</h4>
+                    <p>Issued by CISCO</p>
+                    <p>Completed an introductory course on data science fundamentals, including data collection,
+                        validation, and analysis techniques. Developed the ability to work with datasets to derive
+                        actionable insights.</p>
                 </div>
                 <div class="certificate-card">
-                    <h4>Data Center Operations</h4>
-                    <p>Data center operations, system troubleshooting, hardware/software maintenance</p>
+                    <h4>Introduction to Cybersecurity</h4>
+                    <p>Issued by CISCO</p>
+                    <p>Gained foundational knowledge in cybersecurity best practices, network vulnerabilities, threat
+                        detection, privacy, and data confidentiality. Demonstrates awareness of key security principles
+                        in digital environments.</p>
                 </div>
                 <div class="certificate-card">
-                    <h4>Additional Certificate</h4>
-                    <p>Continuous learning and professional development</p>
-                </div>
-                <!-- More duplicates for smooth infinite scroll -->
-                <div class="certificate-card">
-                    <h4>Programming</h4>
-                    <p>HTML, CSS, JavaScript, Java, Python</p>
-                </div>
-                <div class="certificate-card">
-                    <h4>Data Analytics</h4>
-                    <p>Data visualization & reporting, basic statistical analysis</p>
-                </div>
-                <div class="certificate-card">
-                    <h4>Cybersecurity & Ethical Hacking</h4>
-                    <p>Ethical hacking fundamentals, security best practices</p>
-                </div>
-                <div class="certificate-card">
-                    <h4>Data Center Operations</h4>
-                    <p>Data center operations, system troubleshooting, hardware/software maintenance</p>
-                </div>
-                <div class="certificate-card">
-                    <h4>Additional Certificate</h4>
-                    <p>Continuous learning and professional development</p>
+                    <h4>General Assembly: Empowering Tomorrow</h4>
+                    <p>Issued by Institute of Computer Engineers of the Philippines</p>
+                    <p>Recognized for active participation in the “Empowering Tomorrow” General Assembly, contributing
+                        to discussions and initiatives promoting technology, innovation, and student engagement.</p>
                 </div>
             </div>
         </div>
