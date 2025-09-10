@@ -11,7 +11,7 @@
             </p>
             <div class="hero-buttons">
                 <a href="#projects" class="btn btn-primary">View My Projects</a>
-                <a href="#about" class="btn btn-secondary">About Me</a>
+                <a href="#skills" class="btn btn-secondary">Skills</a>
             </div>
         </div>
         <div>
@@ -23,37 +23,80 @@
     <section class="about" id="about">
         <h2 class="glow-heading">About <span class="accent">Me</span></h2>
         <p>
-            👋 Hi, I’m Zoren A. Corbillon, a Computer Engineering graduate passionate about technology, problem-solving,
-            and continuous learning. During my internship at ASKI iSynergies, I gained practical experience in coding,
-            debugging, database management, and system feature enhancements—contributing to the development of iSyn-app,
-            an automation tool for inventory, sales, and data management.
-
-            Alongside my academic background, I’ve strengthened my expertise through certifications in programming, data
-            analytics, cybersecurity, ethical hacking, and data center operations. I thrive in collaborative
-            environments and bring adaptability, creativity, and a proactive mindset to every project. I’m eager to grow
-            and contribute in roles such as Computer Programmer, Software Engineer, Data Analyst, or Computer
-            Technician, where I can apply my skills to deliver real-world impact.
-
-            🌟 Let’s connect and explore how I can add value to your team!
+            👋 I’m Zoren A. Corbillon, a Computer Engineering graduate from Wesleyan University-Philippines with a
+            strong passion for software development and problem-solving through technology. My academic background,
+            complemented by certifications in programming, data analytics, cybersecurity, and ethical hacking, has
+            equipped me with the skills to design, build, and enhance software solutions. I bring creativity,
+            adaptability, and a proactive mindset to every project and thrive in collaborative environments. I’m eager
+            to pursue opportunities as a Software Engineer, Computer Programmer, or related roles, where I can apply my
+            skills to create real-world impact.
         </p>
-        <h3>Skills</h3>
-        <ul>
-            <li><i class="fas fa-code"></i> <strong>Programming Languages:</strong> HTML, CSS, JavaScript, Java, Python,
-                PHP</li>
-            <li><i class="fas fa-database"></i> <strong>Database Management:</strong> MySQL, SQL fundamentals,
-                myPHPAdmin</li>
-            <li><i class="fas fa-chart-bar"></i> <strong>Data Analytics:</strong> Data visualization & reporting, basic
-                statistical analysis</li>
-            <li><i class="fas fa-shield-alt"></i> <strong>Cybersecurity & Networking:</strong> Ethical hacking
-                fundamentals, security best practices</li>
-            <li><i class="fas fa-server"></i> <strong>IT & Systems:</strong> Data center operations, system
-                troubleshooting, hardware/software maintenance</li>
-            <li><i class="fas fa-users"></i> <strong>Soft Skills:</strong> Problem-solving, teamwork, adaptability,
-                continuous learning mindset</li>
-        </ul>
-        <h3>Certificates</h3>
     </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <h2 class="glow-heading">Skills</h2>
+        <div class="skills-cards-grid">
+            <div class="skill-card animate-on-scroll">
+                <i class="fab fa-html5 fa-4x accent-glow"></i>
+                <h3>HTML</h3>
+                <p>Markup language for structuring web content.</p>
+            </div>
+            <div class="skill-card animate-on-scroll">
+                <i class="fab fa-css3-alt fa-4x accent-glow"></i>
+                <h3>CSS</h3>
+                <p>Styling language for designing web pages.</p>
+            </div>
+            <div class="skill-card animate-on-scroll">
+                <i class="fab fa-js-square fa-4x accent-glow"></i>
+                <h3>JavaScript</h3>
+                <p>Programming language for interactive web features.</p>
+            </div>
+            <div class="skill-card animate-on-scroll">
+                <i class="fab fa-java fa-4x accent-glow"></i>
+                <h3>Java</h3>
+                <p>Object-oriented programming language for various applications.</p>
+            </div>
+            <div class="skill-card animate-on-scroll">
+                <i class="fab fa-python fa-4x accent-glow"></i>
+                <h3>Python</h3>
+                <p>High-level programming language for general-purpose coding.</p>
+            </div>
+            <div class="skill-card animate-on-scroll">
+                <i class="fab fa-php fa-4x accent-glow"></i>
+                <h3>PHP</h3>
+                <p>Server-side scripting language for web development.</p>
+            </div>
+            <div class="skill-card animate-on-scroll">
+                <i class="fas fa-database fa-4x accent-glow"></i>
+                <h3>MySQL</h3>
+                <p>Relational database management system.</p>
+            </div>
+            <div class="skill-card animate-on-scroll">
+                <i class="fas fa-chart-bar fa-4x accent-glow"></i>
+                <h3>Data Analytics</h3>
+                <p>Data visualization and reporting skills.</p>
+            </div>
+            <div class="skill-card animate-on-scroll">
+                <i class="fas fa-shield-alt fa-4x accent-glow"></i>
+                <h3>Cybersecurity</h3>
+                <p>Security best practices and ethical hacking fundamentals.</p>
+            </div>
+            <div class="skill-card animate-on-scroll">
+                <i class="fas fa-server fa-4x accent-glow"></i>
+                <h3>IT & Systems</h3>
+                <p>System troubleshooting and data center operations.</p>
+            </div>
+            <div class="skill-card animate-on-scroll">
+                <i class="fas fa-users fa-4x accent-glow"></i>
+                <h3>Soft Skills</h3>
+                <p>Problem-solving, teamwork, adaptability, and learning mindset.</p>
+            </div>
+        </div>
+    </section>
+
     <section class="certificates-section">
+        <h2 class="glow-heading">Certificates</h2>
         <button class="carousel-btn prev-btn" aria-label="Previous certificates">‹</button>
         <div class="certificates-carousel-wrapper">
             <div class="certificates-carousel">
@@ -142,31 +185,27 @@
     <!-- Projects Section -->
     <section class="projects-preview" id="projects">
         <h2 class="glow-heading">Featured <span class="accent">Projects</span></h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <i class="fas fa-mobile-alt fa-2x accent-glow"></i>
-                <h3>WU-P Pocket Guide 📱</h3>
-                <p>The WU-P Pocket Guide Web App is a campus navigation and information system for students and guests
+        <div class="projects-container">
+            <div class="projects-sidebar">
+                <div class="project-card animate-on-scroll selected" data-index="0">
+                    <i class="fas fa-mobile-alt fa-2x accent-glow"></i>
+                    <h3>WU-P Pocket Guide</h3>
+                </div>
+                <div class="project-card animate-on-scroll" data-index="1">
+                    <i class="fas fa-store fa-2x accent-glow"></i>
+                    <h3>iSyn-App</h3>
+                </div>
+                <div class="project-card animate-on-scroll" data-index="2">
+                    <i class="fas fa-database fa-2x accent-glow"></i>
+                    <h3>Project Three</h3>
+                </div>
+            </div>
+            <div class="projects-preview-panel animate-on-scroll">
+                <h3 id="preview-title">WU-P Pocket Guide 📱</h3>
+                <p id="preview-description">The WU-P Pocket Guide Web App is a campus navigation and information system for students and guests
                     of Wesleyan University-Philippines (WU-P). It centralizes university announcements by pulling data
                     from various WU-P-related Facebook pages and provides a smart chatbot to assist users.</p>
-                <a href="https://github.com/DOGEguy12/wup-pocket-guide.git" target="_blank" class="btn btn-small">See
-                    More</a>
-            </div>
-            <div class="project-card">
-                <i class="fas fa-store fa-2x accent-glow"></i>
-                <h3>iSyn-App</h3>
-                <p>iSyn-app is an automation tool for inventory, sales, and data management developed by iSynergies,
-                    Inc., the IT subsidiary of ASKI (Alalay sa Kaunlaran, Inc.). The system streamlines organizational
-                    processes by centralizing records, reducing manual work, and improving data accuracy for business
-                    operations.</p>
-                <a href="https://github.com/isynergiesinc/isyn-app.git" target="_blank" class="btn btn-small">See
-                    More</a>
-            </div>
-            <div class="project-card">
-                <i class="fas fa-database fa-2x accent-glow"></i>
-                <h3>Project Three</h3>
-                <p>Short description of your project goes here.</p>
-                <a href="#" class="btn btn-small">See More</a>
+            <!-- Removed View button for uniformity -->
             </div>
         </div>
     </section>

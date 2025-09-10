@@ -126,6 +126,201 @@ class CardCarouselLoop {
     }
 }
 
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href').slice(1);
+        if (targetId === 'home') {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            return;
+        }
+        const target = document.getElementById(targetId);
+        if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    });
+});
+
+// Highlight nav link on hover
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('mouseenter', function () {
+        this.classList.add('nav-link-active');
+    });
+    link.addEventListener('mouseleave', function () {
+        this.classList.remove('nav-link-active');
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const toggleTitle = document.getElementById('toggle-title');
+    if (!toggleTitle) return;
+
+    const texts = ['Computer Engineer', 'Web Developer'];
+    let index = 0;
+    const intervalDuration = 3000; // time between text changes
+
+    function fadeOutIn(element, newText) {
+        element.style.opacity = 0; // fade out
+
+        setTimeout(() => {
+            element.textContent = newText;
+            element.style.opacity = 1; // fade in
+        }, 500); // match with CSS transition duration
+    }
+
+    setInterval(() => {
+        index = (index + 1) % texts.length;
+        fadeOutIn(toggleTitle, texts[index]);
+    }, intervalDuration);
+});
+
+// Skills Animation on Scroll
+document.addEventListener('DOMContentLoaded', () => {
+  const animatedElements = document.querySelectorAll('.animate-on-scroll');
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.1,
+    }
+  );
+
+  animatedElements.forEach((el) => {
+    observer.observe(el);
+  });
+});
+
+
+// Skill card zoom effect
+document.querySelectorAll('.skill-card').forEach(card => {
+    card.style.transform = 'scale(0.7)'; // Smaller default scale to fit only icon
+    card.addEventListener('mouseenter', () => {
+        card.style.transform = 'scale(1.0)'; // Expand on hover
+    });
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = 'scale(0.7)'; // Back to smaller
+    });
+});
+
+document.querySelectorAll('.project-card').forEach(card => {
+    card.style.transform = 'scale(0.7)'; // Set initial smaller scale
+    card.addEventListener('mouseenter', () => {
+        card.style.transform = 'scale(1.0)'; // Expand on hover
+    });
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = 'scale(0.7)'; // Back to smaller
+    });
+});
+
+// Project preview update logic
+document.addEventListener('DOMContentLoaded', () => {
+    const projectCards = document.querySelectorAll('.projects-sidebar .project-card');
+    const previewTitle = document.getElementById('preview-title');
+    const previewDescription = document.getElementById('preview-description');
+    const previewLink = document.getElementById('preview-link');
+
+    const projectsData = [
+        {
+            title: 'WU-P Pocket Guide 📱',
+            description: 'The WU-P Pocket Guide Web App is a campus navigation and information system for students and guests of Wesleyan University-Philippines (WU-P). It centralizes university announcements by pulling data from various WU-P-related Facebook pages and provides a smart chatbot to assist users.',
+            link: 'https://github.com/DOGEguy12/wup-pocket-guide.git'
+        },
+        {
+            title: 'iSyn-App',
+            description: 'iSyn-app is an automation tool for inventory, sales, and data management developed by iSynergies, Inc., the IT subsidiary of ASKI (Alalay sa Kaunlaran, Inc.). The system streamlines organizational processes by centralizing records, reducing manual work, and improving data accuracy for business operations.',
+            link: 'https://github.com/isynergiesinc/isyn-app.git'
+        },
+        {
+            title: 'Project Three',
+            description: 'Short description of your project goes here.',
+            link: '#'
+        }
+    ];
+
+    // Set first project card as selected initially
+    if (projectCards.length > 0) {
+        projectCards.forEach(c => c.classList.remove('selected'));
+        projectCards[0].classList.add('selected');
+        previewTitle.textContent = projectsData[0].title;
+        previewDescription.textContent = projectsData[0].description;
+    }
+
+    projectCards.forEach(card => {
+        card.addEventListener('click', () => {
+            // Remove selected class from all cards
+            projectCards.forEach(c => c.classList.remove('selected'));
+            // Add selected class to clicked card
+            card.classList.add('selected');
+
+            const index = parseInt(card.getAttribute('data-index'));
+            const project = projectsData[index];
+
+            // Update preview panel
+            previewTitle.textContent = project.title;
+            previewDescription.textContent = project.description;
+            // Removed previewLink updates since button removed
+        });
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const projectCards = document.querySelectorAll('.projects-sidebar .project-card');
+    const previewTitle = document.getElementById('preview-title');
+    const previewDescription = document.getElementById('preview-description');
+    const previewLink = document.getElementById('preview-link');
+
+    const projectsData = [
+        {
+            title: 'WU-P Pocket Guide 📱',
+            description: 'The WU-P Pocket Guide Web App is a campus navigation and information system for students and guests of Wesleyan University-Philippines (WU-P). It centralizes university announcements by pulling data from various WU-P-related Facebook pages and provides a smart chatbot to assist users.',
+            link: 'https://github.com/DOGEguy12/wup-pocket-guide.git'
+        },
+        {
+            title: 'iSyn-App',
+            description: 'iSyn-app is an automation tool for inventory, sales, and data management developed by iSynergies, Inc., the IT subsidiary of ASKI (Alalay sa Kaunlaran, Inc.). The system streamlines organizational processes by centralizing records, reducing manual work, and improving data accuracy for business operations.',
+            link: 'https://github.com/isynergiesinc/isyn-app.git'
+        },
+        {
+            title: 'Project Three',
+            description: 'Short description of your project goes here.',
+            link: '#'
+        }
+    ];
+
+    // Set first project card as selected initially
+    if (projectCards.length > 0) {
+        projectCards.forEach(c => c.classList.remove('selected'));
+        projectCards[0].classList.add('selected');
+        previewTitle.textContent = projectsData[0].title;
+        previewDescription.textContent = projectsData[0].description;
+    }
+
+    projectCards.forEach(card => {
+        card.addEventListener('click', () => {
+            // Remove selected class from all cards
+            projectCards.forEach(c => c.classList.remove('selected'));
+            // Add selected class to clicked card
+            card.classList.add('selected');
+
+            const index = parseInt(card.getAttribute('data-index'));
+            const project = projectsData[index];
+
+            // Update preview panel
+            previewTitle.textContent = project.title;
+            previewDescription.textContent = project.description;
+            // Removed previewLink updates since button removed
+        });
+    });
+});
+
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
     new CardCarouselLoop();

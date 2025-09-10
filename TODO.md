@@ -1,0 +1,4 @@
+- [ ] Refactor projects section HTML in index.php to have sidebar and preview panel layout
+- [ ] Add JavaScript in main.js to handle project card clicks and update preview panel
+- [ ] Add CSS styles in style.css for sidebar and preview panel layout and styling
+- [ ] Test the interactive project section for functionality and responsiveness

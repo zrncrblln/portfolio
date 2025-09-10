@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="assets/css-js/style.css">
     <!-- Import JavaScript -->
     <script src="assets/css-js/main.js" defer></script>
+    
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
