@@ -14,8 +14,13 @@
                 <a href="#skills" class="btn btn-secondary">Skills</a>
             </div>
         </div>
-        <div>
-            <img src="assets/images/zz.JPG" alt="img" class="hero-rect-img">
+        <div class="diamond-profile-container">
+            <div class="diamond-profile">
+                <img src="assets/images/zz.JPG" alt="Profile Picture">
+            </div>
+            <div class="diamond-shape-decoration decoration-1"></div>
+            <div class="diamond-shape-decoration decoration-2"></div>
+            <div class="diamond-shape-decoration decoration-3"></div>
         </div>
     </section>
 
@@ -202,10 +207,11 @@
             </div>
             <div class="projects-preview-panel animate-on-scroll">
                 <h3 id="preview-title">WU-P Pocket Guide 📱</h3>
-                <p id="preview-description">The WU-P Pocket Guide Web App is a campus navigation and information system for students and guests
+                <p id="preview-description">The WU-P Pocket Guide Web App is a campus navigation and information system
+                    for students and guests
                     of Wesleyan University-Philippines (WU-P). It centralizes university announcements by pulling data
                     from various WU-P-related Facebook pages and provides a smart chatbot to assist users.</p>
-            <!-- Removed View button for uniformity -->
+                <!-- Removed View button for uniformity -->
             </div>
         </div>
     </section>

@@ -14,7 +14,7 @@ body {
     position: relative;
     overflow-x: hidden;
     overflow-y: visible;
-    padding: 0 20px;
+    padding: 0px 10px;
 }
 
 /* Background Grid Pattern */
@@ -117,17 +117,39 @@ a {
 }
 
 .hero-rect-img {
-    width: 280px;
-    height: 420px;
+    width: 300px;
+    height: 300px;
     object-fit: cover;
-    border-radius: 12px;
+    border-radius: 50%;
     box-shadow: 0 16px 48px rgba(62, 198, 255, 0.8);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
     overflow: visible;
+    filter: none;
+}
+
+.hero-rect-img::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 50%;
+    background: conic-gradient(from 0deg, #3ec6ff, #00d4ff, #3ec6ff);
+    z-index: -1;
+    animation: rotate-border 3s linear infinite;
+    mask: radial-gradient(circle at center, transparent 50%, black 52%);
+    -webkit-mask: radial-gradient(circle at center, transparent 50%, black 52%);
 }
 
 .hero-rect-img:hover {
     transform: scale(1.05);
+    box-shadow: 0 20px 60px rgba(62, 198, 255, 1);
+}
+
+.hero-rect-img:hover::before {
+    animation-duration: 1.5s;
 }
 
 .hero {
@@ -136,9 +158,9 @@ a {
     align-items: center;
     justify-content: space-between;
     padding: 0 0 70px 0;
-    /* Reduced top padding to remove margin at top */
     min-height: 60vh;
     position: relative;
+    margin-top: 160px; /* Add this line - just 30px for subtle spacing */
 }
 
 .hero-content {
@@ -597,6 +619,153 @@ section .glow-heading {
         width: 45%;
         margin: 0 auto;
     }
+}
+
+/* Keyframes for rotating border */
+@keyframes rotate-border {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Enhanced Hero Image */
+.hero-rect-img {
+    display: none; /* Hide old hero image */
+}
+
+/* Diamond profile container */
+.diamond-profile-container {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  margin: 0 auto;
+  perspective: 1000px;
+  opacity: 0;
+  animation: fade-in-slide-up 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+/* Diamond shape by rotating square */
+.diamond-profile {
+  width: 280px;
+  height: 280px;
+  overflow: hidden;
+  transform: rotate(45deg);
+  margin: 0 auto;
+  box-shadow: 0 16px 48px rgba(62, 198, 255, 0.8);
+  border-radius: 20px;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #0a1623; /* Changed from white to background color to fill white gaps */
+}
+
+/* Image inside diamond shape, rotated back to normal */
+.diamond-profile img {
+  width: 130%;
+  height: 130%;
+  object-fit: contain;
+  object-position: center bottom; /* Show bottom part fully */
+  transform: rotate(-45deg);
+  border-radius: 12px;
+  display: block;
+  background-color: transparent; /* Remove white background */
+}
+
+/* Hover effect: scale and glow */
+.diamond-profile-container:hover .diamond-profile {
+  transform: rotate(45deg) scale(1.05);
+  box-shadow: 0 20px 60px rgba(62, 198, 255, 1);
+}
+
+/* Geometric shapes decorations */
+.diamond-shape-decoration {
+  position: absolute;
+  border: 2px solid #3ec6ff;
+  opacity: 0.6;
+  animation: float-rotate 10s linear infinite;
+  border-radius: 8px;
+}
+
+/* Different sizes and positions for decorations */
+.decoration-1 {
+  width: 60px;
+  height: 60px;
+  top: -20px;
+  left: -20px;
+}
+
+.decoration-2 {
+  width: 40px;
+  height: 40px;
+  bottom: -15px;
+  right: 10px;
+  animation-duration: 12s;
+}
+
+.decoration-3 {
+  width: 80px;
+  height: 80px;
+  top: 50%;
+  right: -40px;
+  transform: translateY(-50%);
+  animation-duration: 15s;
+}
+
+/* Floating and rotating animation */
+@keyframes float-rotate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(10px) rotate(180deg);
+  }
+  100% {
+    transform: translateY(0) rotate(360deg);
+  }
+}
+
+/* Fade-in animation on page load */
+@keyframes fade-in-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .diamond-profile-container {
+    width: 240px;
+    height: 240px;
+  }
+  .diamond-profile {
+    width: 200px;
+    height: 200px;
+  }
+  .decoration-1 {
+    width: 40px;
+    height: 40px;
+    top: -15px;
+    left: -15px;
+  }
+  .decoration-2 {
+    width: 30px;
+    height: 30px;
+    bottom: -10px;
+    right: 5px;
+  }
+  .decoration-3 {
+    width: 50px;
+    height: 50px;
+    right: -25px;
+  }
 }
 
 /* Certificate Carousel Styles */
