@@ -74,7 +74,12 @@ portfolio/
 - Certified Data Center Technician (CDCT)
 - Python Essentials 1
 - Data Analytics Essentials
-- And more...
+- Introduction to Data Science
+- Introduction to Cybersecurity
+- Professionalism (US English)
+- Start-up Mindset (US English)
+- Marketing ME Live
+- General Assembly: Empowering Tomorrow
 
 ## 🌟 Featured Projects
 
