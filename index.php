@@ -10,7 +10,7 @@
                 Transforming ideas into secure, modern, and visually stunning digital experiences.
             </p>
             <div class="hero-buttons">
-                <a href="#projects" class="btn btn-primary">View My Projects</a>
+                <a href="#projects" class="btn btn-primary">Projects</a>
                 <a href="#skills" class="btn btn-secondary">Skills</a>
             </div>
         </div>
@@ -195,14 +195,23 @@
                 <div class="project-card animate-on-scroll selected" data-index="0">
                     <i class="fas fa-mobile-alt fa-2x accent-glow"></i>
                     <h3>WU-P Pocket Guide</h3>
+                    <a href="https://github.com/DOGEguy12/wup-pocket-guide.git" target="_blank" class="btn btn-github" title="View on GitHub">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
                 </div>
                 <div class="project-card animate-on-scroll" data-index="1">
                     <i class="fas fa-store fa-2x accent-glow"></i>
                     <h3>iSyn-App</h3>
+                    <a href="https://github.com/isynergiesinc/isyn-app.git" target="_blank" class="btn btn-github" title="View on GitHub">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
                 </div>
                 <div class="project-card animate-on-scroll" data-index="2">
                     <i class="fas fa-database fa-2x accent-glow"></i>
-                    <h3>Project Three</h3>
+                    <h3>WU-P Automate</h3>
+                    <a href="https://github.com/zrncrblln/automate.git" target="_blank" class="btn btn-github" title="View on GitHub">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
                 </div>
             </div>
             <div class="projects-preview-panel animate-on-scroll">

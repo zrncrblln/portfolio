@@ -177,25 +177,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Skills Animation on Scroll
 document.addEventListener('DOMContentLoaded', () => {
-  const animatedElements = document.querySelectorAll('.animate-on-scroll');
+    const animatedElements = document.querySelectorAll('.animate-on-scroll');
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            threshold: 0.1,
         }
-      });
-    },
-    {
-      threshold: 0.1,
-    }
-  );
+    );
 
-  animatedElements.forEach((el) => {
-    observer.observe(el);
-  });
+    animatedElements.forEach((el) => {
+        observer.observe(el);
+    });
 });
 
 
@@ -289,9 +289,9 @@ document.addEventListener('DOMContentLoaded', () => {
             link: 'https://github.com/isynergiesinc/isyn-app.git'
         },
         {
-            title: 'Project Three',
-            description: 'Short description of your project goes here.',
-            link: '#'
+            title: 'WU-P Automate',
+            description: 'WU-P Automate is a web-based automation system built with PHP, MySQL, Bootstrap 5, HTML, CSS, and JavaScript. It is designed to streamline workflows within the WU-P environment by reducing repetitive manual tasks and providing a structured, user-friendly interface. With a modular architecture and clean codebase, it ensures scalability, maintainability, and ease of integration for future enhancements.',
+            link: 'https://github.com/zrncrblln/automate.git'
         }
     ];
 
