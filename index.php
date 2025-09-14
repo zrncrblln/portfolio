@@ -228,10 +228,10 @@
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <h2 class="glow-heading">Contact <span class="accent">Me</span></h2>
-        <form class="contact-form">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" required></textarea>
+        <form class="contact-form" id="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
             <button type="submit" class="btn btn-primary">Send Message</button>
         </form>
     </section>

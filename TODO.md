@@ -1,13 +1,7 @@
-# Portfolio Image Enhancement TODO
+# TODO: Implement Contact Form Email Sending
 
-## Tasks
-- [x] Update .hero-rect-img CSS to make it circular with animated border
-- [x] Add keyframes for rotating border animation
-- [x] Improve hover effects with glow and scale
-- [x] Ensure responsive design for mobile devices
-- [x] Test the changes in browser
-
-## Completed
-- [x] Analyze current image styling
-- [x] Brainstorm enhancement ideas
-- [x] Get user approval
+- [x] Create PHP script `assets/includes/send_email.php` to handle email sending
+- [x] Edit `index.php` to add id to contact form
+- [x] Edit `assets/css-js/main.js` to add form submission handler with AJAX
+- [ ] Test the contact form submission
+- [ ] Verify email is received (note: PHP mail may need SMTP configuration in XAMPP)

@@ -196,6 +196,43 @@ document.addEventListener('DOMContentLoaded', () => {
     animatedElements.forEach((el) => {
         observer.observe(el);
     });
+
+    // Contact form submission handler
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(contactForm);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                message: formData.get('message')
+            };
+
+            try {
+                const response = await fetch('assets/includes/send_email.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: new URLSearchParams(data)
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    alert('Message sent successfully!');
+                    contactForm.reset();
+                } else {
+                    alert('Failed to send message: ' + result.message);
+                }
+            } catch (error) {
+                alert('An error occurred while sending the message.');
+                console.error('Error:', error);
+            }
+        });
+    }
 });
 
 
