@@ -24,13 +24,14 @@ const filters = document.querySelectorAll('.portfolio-filters .filter');
 const portfolioItems = document.querySelectorAll('.portfolio-item');
 
 filters.forEach(filter => {
-  filter.addEventListener('click', () => {
+  filter.addEventListener('click', (e) => {
+    e.preventDefault();
     filters.forEach(f => f.classList.remove('active'));
     filter.classList.add('active');
-    const filterValue = filter.textContent.toLowerCase();
+    const filterValue = filter.getAttribute('data-filter');
 
     portfolioItems.forEach(item => {
-      if (filterValue === 'all' || item.classList.contains(filterValue)) {
+      if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
         item.style.display = 'block';
       } else {
         item.style.display = 'none';

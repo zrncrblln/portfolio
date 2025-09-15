@@ -118,36 +118,58 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <!-- Portfolio Section -->
         <section class="portfolio" id="portfolio">
             <h2>Portfolio</h2>
-            <p>Showcasing my creative work and technical projects. Browse through my portfolio to see examples of
-                applications, products, branding designs, and other creative endeavors that demonstrate my skills
-                and passion for innovative solutions.</p>
+            <p>Showcasing my certificates and skills. Browse through my certifications and technical proficiencies that demonstrate my expertise and passion for continuous learning.</p>
 
             <div class="portfolio-filters">
                 <a href="#" class="filter active" data-filter="all">ALL</a>
-                <a href="#" class="filter" data-filter="app">APP</a>
-                <a href="#" class="filter" data-filter="product">PRODUCT</a>
-                <a href="#" class="filter" data-filter="branding">BRANDING</a>
-                <a href="#" class="filter" data-filter="books">BOOKS</a>
+                <a href="#" class="filter" data-filter="certificates">CERTIFICATES</a>
+                <a href="#" class="filter" data-filter="skills">SKILLS</a>
             </div>
 
             <div class="portfolio-items">
-                <div class="portfolio-item" data-category="app">
-                    <img src="assets/images/portfolio-1.jpg" alt="Portfolio Item 1" class="portfolio-img">
+                <div class="portfolio-item" data-category="certificates">
+                    <h3>Programming Certification</h3>
+                    <p>Issuer: Example Institute</p>
+                    <p>Date: 2023</p>
                 </div>
-                <div class="portfolio-item" data-category="product">
-                    <img src="assets/images/portfolio-2.jpg" alt="Portfolio Item 2" class="portfolio-img">
+                <div class="portfolio-item" data-category="certificates">
+                    <h3>Data Analytics Certification</h3>
+                    <p>Issuer: Data Corp</p>
+                    <p>Date: 2022</p>
                 </div>
-                <div class="portfolio-item" data-category="branding">
-                    <img src="assets/images/portfolio-3.jpg" alt="Portfolio Item 3" class="portfolio-img">
+                <div class="portfolio-item" data-category="certificates">
+                    <h3>Cybersecurity Certification</h3>
+                    <p>Issuer: Security Academy</p>
+                    <p>Date: 2021</p>
                 </div>
-                <div class="portfolio-item" data-category="app">
-                    <img src="assets/images/portfolio-4.jpg" alt="Portfolio Item 4" class="portfolio-img">
+                <div class="portfolio-item" data-category="certificates">
+                    <h3>Ethical Hacking Certification</h3>
+                    <p>Issuer: Hack Institute</p>
+                    <p>Date: 2020</p>
                 </div>
-                <div class="portfolio-item" data-category="books">
-                    <img src="assets/images/portfolio-5.jpg" alt="Portfolio Item 5" class="portfolio-img">
+                <div class="portfolio-item" data-category="skills">
+                    <h3>Web Development</h3>
+                    <p>Proficiency: Advanced</p>
                 </div>
-                <div class="portfolio-item" data-category="product">
-                    <img src="assets/images/portfolio-6.jpg" alt="Portfolio Item 6" class="portfolio-img">
+                <div class="portfolio-item" data-category="skills">
+                    <h3>UI/UX Design</h3>
+                    <p>Proficiency: Intermediate</p>
+                </div>
+                <div class="portfolio-item" data-category="skills">
+                    <h3>Data Analytics</h3>
+                    <p>Proficiency: Advanced</p>
+                </div>
+                <div class="portfolio-item" data-category="skills">
+                    <h3>Cybersecurity</h3>
+                    <p>Proficiency: Intermediate</p>
+                </div>
+                <div class="portfolio-item" data-category="skills">
+                    <h3>Ethical Hacking</h3>
+                    <p>Proficiency: Beginner</p>
+                </div>
+                <div class="portfolio-item" data-category="skills">
+                    <h3>Software Engineering</h3>
+                    <p>Proficiency: Advanced</p>
                 </div>
             </div>
 
