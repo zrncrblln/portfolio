@@ -1,240 +1,247 @@
-<?php include 'assets/includes/header.php'; ?>
+<!DOCTYPE html>
+<html lang="en">
 
-<main class="container">
-    <!-- Hero Section -->
-    <section class="hero" id="home" style="margin-bottom: 50px">
-        <div class="hero-content">
-            <h1 class="glow-heading">👋Hi I'm Zoren a <span id="toggle-title" class="accent">Computer Engineer</span>
-            </h1>
-            <p class="subtitle">
-                Transforming ideas into secure, modern, and visually stunning digital experiences.
-            </p>
-            <div class="hero-buttons">
-                <a href="#projects" class="btn btn-primary">Projects</a>
-                <a href="#skills" class="btn btn-secondary">Skills</a>
-            </div>
-        </div>
-        <div class="diamond-profile-container">
-            <div class="diamond-profile">
-                <img src="assets/images/zz.JPG" alt="Profile Picture">
-            </div>
-            <div class="diamond-shape-decoration decoration-1"></div>
-            <div class="diamond-shape-decoration decoration-2"></div>
-            <div class="diamond-shape-decoration decoration-3"></div>
-        </div>
-    </section>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="assets/css-js/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
 
-    <!-- About Section -->
-    <section class="about" id="about">
-        <h2 class="glow-heading">About <span class="accent">Me</span></h2>
-        <p>
-            👋 I’m Zoren A. Corbillon, a Computer Engineering graduate from Wesleyan University-Philippines with a
-            strong passion for software development and problem-solving through technology. My academic background,
-            complemented by certifications in programming, data analytics, cybersecurity, and ethical hacking, has
-            equipped me with the skills to design, build, and enhance software solutions. I bring creativity,
-            adaptability, and a proactive mindset to every project and thrive in collaborative environments. I’m eager
-            to pursue opportunities as a Software Engineer, Computer Programmer, or related roles, where I can apply my
-            skills to create real-world impact.
-        </p>
-    </section>
+<body>
+    <?php include 'assets/includes/sidebar.php'; ?>
 
-    <!-- Skills Section -->
-    <section class="skills" id="skills">
-        <h2 class="glow-heading">Skills</h2>
-        <div class="skills-cards-grid">
-            <div class="skill-card animate-on-scroll">
-                <i class="fab fa-html5 fa-4x accent-glow"></i>
-                <h3>HTML</h3>
-                <p>Markup language for structuring web content.</p>
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <h1>Zoren Corbillon</h1>
+                <p>I'm a <span class="highlight">Web Developer</span></p>
             </div>
-            <div class="skill-card animate-on-scroll">
-                <i class="fab fa-css3-alt fa-4x accent-glow"></i>
-                <h3>CSS</h3>
-                <p>Styling language for designing web pages.</p>
-            </div>
-            <div class="skill-card animate-on-scroll">
-                <i class="fab fa-js-square fa-4x accent-glow"></i>
-                <h3>JavaScript</h3>
-                <p>Programming language for interactive web features.</p>
-            </div>
-            <div class="skill-card animate-on-scroll">
-                <i class="fab fa-java fa-4x accent-glow"></i>
-                <h3>Java</h3>
-                <p>Object-oriented programming language for various applications.</p>
-            </div>
-            <div class="skill-card animate-on-scroll">
-                <i class="fab fa-python fa-4x accent-glow"></i>
-                <h3>Python</h3>
-                <p>High-level programming language for general-purpose coding.</p>
-            </div>
-            <div class="skill-card animate-on-scroll">
-                <i class="fab fa-php fa-4x accent-glow"></i>
-                <h3>PHP</h3>
-                <p>Server-side scripting language for web development.</p>
-            </div>
-            <div class="skill-card animate-on-scroll">
-                <i class="fas fa-database fa-4x accent-glow"></i>
-                <h3>MySQL</h3>
-                <p>Relational database management system.</p>
-            </div>
-            <div class="skill-card animate-on-scroll">
-                <i class="fas fa-chart-bar fa-4x accent-glow"></i>
-                <h3>Data Analytics</h3>
-                <p>Data visualization and reporting skills.</p>
-            </div>
-            <div class="skill-card animate-on-scroll">
-                <i class="fas fa-shield-alt fa-4x accent-glow"></i>
-                <h3>Cybersecurity</h3>
-                <p>Security best practices and ethical hacking fundamentals.</p>
-            </div>
-            <div class="skill-card animate-on-scroll">
-                <i class="fas fa-server fa-4x accent-glow"></i>
-                <h3>IT & Systems</h3>
-                <p>System troubleshooting and data center operations.</p>
-            </div>
-            <div class="skill-card animate-on-scroll">
-                <i class="fas fa-users fa-4x accent-glow"></i>
-                <h3>Soft Skills</h3>
-                <p>Problem-solving, teamwork, adaptability, and learning mindset.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="certificates-section">
-        <h2 class="glow-heading">Certificates</h2>
-        <button class="carousel-btn prev-btn" aria-label="Previous certificates">‹</button>
-        <div class="certificates-carousel-wrapper">
-            <div class="certificates-carousel">
-                <!-- Original cards -->
-                <div class="certificate-card">
-                    <h4>Certified Data Center Technician (CDCT)</h4>
-                    <p>Issued by EAST WEST INTERNATIONAL EDUCATIONAL SPECIALISTS, INC</p>
-                    <p>This foundational course introduces participants to the essentials of datacenter operations,
-                        including architecture, basic networking, power and cooling systems, and an introduction to
-                        cloud computing. It lays the groundwork for a career in data center management.</p>
-                </div>
-                <div class="certificate-card">
-                    <h4>Professionalism (US English)</h4>
-                    <p>Issued by Wadhwani Foundation</p>
-                    <p>Completed a professional development program focused on essential workplace skills, including
-                        business etiquette, time management, workplace ethics, interpersonal communication,
-                        adaptability, and problem-solving. This certification demonstrates a commitment to maintaining
-                        high standards of professionalism in diverse business environments.</p>
-                </div>
-                <div class="certificate-card">
-                    <h4>Start-up Mindset (US English)</h4>
-                    <p>Issued by Wadhwani Foundation</p>
-                    <p>Completed a program designed to cultivate entrepreneurial thinking and a start-up mindset,
-                        emphasizing skills such as creativity and innovation, business strategy, decision-making, risk
-                        management, strategic planning, resiliency, and a growth-oriented approach. This certification
-                        reflects the ability to navigate dynamic business environments and contribute to innovative
-                        ventures.</p>
-                </div>
-                <div class="certificate-card">
-                    <h4>Marketing ME Live</h4>
-                    <p>Issued by Jobs180.com, Incorporated</p>
-                    <p>Attended a career-focused session covering key aspects of marketing and professional growth,
-                        including career development, personal branding, marketing fundamentals, communication, public
-                        speaking, professional networking, staff development, and team collaboration. This certificate
-                        highlights engagement in continuous learning and career skill enhancement.</p>
-                </div>
-                <div class="certificate-card">
-                    <h4>Certified Ethical Hacker (CEH)</h4>
-                    <p>Issued by CISCO</p>
-                    <p>Earned certification in ethical hacking and cybersecurity practices, covering areas such as
-                        penetration testing, vulnerability assessment, network and application exploitation, IoT
-                        security, social engineering, and reporting. Demonstrates expertise in identifying and
-                        addressing security vulnerabilities using industry-standard tools and methodologies.</p>
-                </div>
-                <!-- Duplicate cards for infinite scroll -->
-                <div class="certificate-card">
-                    <h4>Python Essentials 1</h4>
-                    <p>Issued by CISCO</p>
-                    <p>Completed foundational training in Python programming, covering algorithmic and analytical
-                        thinking, procedural programming, debugging, and best practices in software development. Skills
-                        gained include basic Python coding, web development concepts, and computer programming design
-                        principles.</p>
-                </div>
-                <div class="certificate-card">
-                    <h4>Data Analytics Essentials</h4>
-                    <p>Issued by CISCO</p>
-                    <p>Acquired essential skills in data analysis, visualization, and storytelling. Training included
-                        working with dashboards, Microsoft Excel, SQL, and Tableau to interpret and communicate data
-                        effectively for business decision-making.</p>
-                </div>
-                <div class="certificate-card">
-                    <h4>Introduction to Data Science</h4>
-                    <p>Issued by CISCO</p>
-                    <p>Completed an introductory course on data science fundamentals, including data collection,
-                        validation, and analysis techniques. Developed the ability to work with datasets to derive
-                        actionable insights.</p>
-                </div>
-                <div class="certificate-card">
-                    <h4>Introduction to Cybersecurity</h4>
-                    <p>Issued by CISCO</p>
-                    <p>Gained foundational knowledge in cybersecurity best practices, network vulnerabilities, threat
-                        detection, privacy, and data confidentiality. Demonstrates awareness of key security principles
-                        in digital environments.</p>
-                </div>
-                <div class="certificate-card">
-                    <h4>General Assembly: Empowering Tomorrow</h4>
-                    <p>Issued by Institute of Computer Engineers of the Philippines</p>
-                    <p>Recognized for active participation in the “Empowering Tomorrow” General Assembly, contributing
-                        to discussions and initiatives promoting technology, innovation, and student engagement.</p>
+        <!-- About Section -->
+        <section class="about" id="about">
+            <h2>About</h2>
+            <p>Hello! I’m Zoren A. Corbillon, a Computer Engineering graduate from Wesleyan University-Philippines with
+                a strong passion for software development and problem-solving through technology. My academic
+                background, complemented by certifications in programming, data analytics, cybersecurity, and ethical
+                hacking, has
+                equipped me with the skills to design, build, and enhance software solutions. I bring creativity,
+                adaptability, and a proactive mindset to every project and thrive in collaborative environments. I’m
+                eager to pursue opportunities as a Software Engineer, Computer Programmer, or related roles, where I can
+                apply my skills to create real-world impact.</p>
+            <div class="about-content">
+                <img src="assets/images/zz.JPG" alt="Zoren Corbillon" class="about-image">
+                <div class="about-details">
+                    <h3>UI/UX Designer & Web Developer.</h3>
+                    <p><em> Transforming ideas into secure, modern, and visually stunning digital experiences.</em></p>
+                    <div class="about-info">
+                        <div>
+                            <p><strong>Birthday:</strong> 15 June 2003</p>
+                            <p><strong>Website:</strong> www.example.com</p>
+                            <p><strong>Phone:</strong> +63 9166 1000 257</p>
+                            <p><strong>City:</strong> Rizal, Nueva Ecija, Philippines</p>
+                        </div>
+                        <div>
+                            <p><strong>Age:</strong> 22</p>
+                            <p><strong>Degree:</strong>Bachelor Degree Holder</p>
+                            <p><strong>Email:</strong> zorencorbillon@gmail.com</p>
+                        </div>
+                    </div>
+                    <p>Dedicated to delivering high-quality work and continuously improving my skills. I am committed to
+                        creating innovative and efficient software solutions that meet user needs and business goals.
+                    </p>
                 </div>
             </div>
-        </div>
-        <button class="carousel-btn next-btn" aria-label="Next certificates">›</button>
-    </section>
+        </section>
 
-    <!-- Projects Section -->
-    <section class="projects-preview" id="projects">
-        <h2 class="glow-heading">Featured <span class="accent">Projects</span></h2>
-        <div class="projects-container">
-            <div class="projects-sidebar">
-                <div class="project-card animate-on-scroll selected" data-index="0">
-                    <i class="fas fa-mobile-alt fa-2x accent-glow"></i>
-                    <h3>WU-P Pocket Guide</h3>
-                    <a href="https://github.com/DOGEguy12/wup-pocket-guide.git" target="_blank" class="btn btn-github" title="View on GitHub">
-                        <i class="fab fa-github"></i> View on GitHub
-                    </a>
+        <!-- Resume Section -->
+        <section class="resume" id="resume">
+            <h2>Resume</h2>
+            <p>Explore my professional journey and qualifications. This section highlights my educational background,
+                work experience, and technical skills that demonstrate my commitment to excellence in software
+                development
+                and problem-solving.</p>
+
+            <div class="resume-content">
+                <div class="summary">
+                    <h3>Summary</h3>
+                    <p><strong>Zoren A. Corbillon</strong></p>
+                    <p><em>Computer Engineering graduate with a passion for software development and problem-solving
+                            through technology.</em></p>
+                    <ul>
+                        <li>Wesleyan University-Philippines</li>
+                        <li>+123 456 7890</li>
+                        <li>zoren@example.com</li>
+                    </ul>
                 </div>
-                <div class="project-card animate-on-scroll" data-index="1">
-                    <i class="fas fa-store fa-2x accent-glow"></i>
-                    <h3>iSyn-App</h3>
-                    <a href="https://github.com/isynergiesinc/isyn-app.git" target="_blank" class="btn btn-github" title="View on GitHub">
-                        <i class="fab fa-github"></i> View on GitHub
-                    </a>
-                </div>
-                <div class="project-card animate-on-scroll" data-index="2">
-                    <i class="fas fa-database fa-2x accent-glow"></i>
-                    <h3>WU-P Automate</h3>
-                    <a href="https://github.com/zrncrblln/automate.git" target="_blank" class="btn btn-github" title="View on GitHub">
-                        <i class="fab fa-github"></i> View on GitHub
-                    </a>
+                <div class="professional-experience">
+                    <h3>Professional Experience</h3>
+                    <p><strong>Software Developer</strong></p>
+                    <p><strong>2025 - Present</strong></p>
+                    <p><em>Fulltime, Remote</em></p>
+                    <ul>
+                        <li>Design, build, and enhance software solutions</li>
+                        <li>Collaborate on projects to create real-world impact</li>
+                        <li>Apply skills in programming, data analytics, cybersecurity, and ethical hacking</li>
+                    </ul>
                 </div>
             </div>
-            <div class="projects-preview-panel animate-on-scroll">
-                <h3 id="preview-title">WU-P Pocket Guide 📱</h3>
-                <p id="preview-description">The WU-P Pocket Guide Web App is a campus navigation and information system
-                    for students and guests
-                    of Wesleyan University-Philippines (WU-P). It centralizes university announcements by pulling data
-                    from various WU-P-related Facebook pages and provides a smart chatbot to assist users.</p>
-                <!-- Removed View button for uniformity -->
+
+            <div class="education">
+                <h3>Education</h3>
+                <p><strong>Bachelor of Science in Computer Engineering</strong></p>
+                <p><strong>2013 - 2017</strong></p>
+                <p>Wesleyan University-Philippines</p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <h2 class="glow-heading">Contact <span class="accent">Me</span></h2>
-        <form class="contact-form" id="contact-form">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit" class="btn btn-primary">Send Message</button>
-        </form>
-    </section>
-</main>
+        <!-- Portfolio Section -->
+        <section class="portfolio" id="portfolio">
+            <h2>Portfolio</h2>
+            <p>Showcasing my creative work and technical projects. Browse through my portfolio to see examples of
+                applications, products, branding designs, and other creative endeavors that demonstrate my skills
+                and passion for innovative solutions.</p>
 
-<?php include 'assets/includes/footer.php'; ?>
+            <div class="portfolio-filters">
+                <a href="#" class="filter active" data-filter="all">ALL</a>
+                <a href="#" class="filter" data-filter="app">APP</a>
+                <a href="#" class="filter" data-filter="product">PRODUCT</a>
+                <a href="#" class="filter" data-filter="branding">BRANDING</a>
+                <a href="#" class="filter" data-filter="books">BOOKS</a>
+            </div>
+
+            <div class="portfolio-items">
+                <div class="portfolio-item" data-category="app">
+                    <img src="assets/images/portfolio-1.jpg" alt="Portfolio Item 1" class="portfolio-img">
+                </div>
+                <div class="portfolio-item" data-category="product">
+                    <img src="assets/images/portfolio-2.jpg" alt="Portfolio Item 2" class="portfolio-img">
+                </div>
+                <div class="portfolio-item" data-category="branding">
+                    <img src="assets/images/portfolio-3.jpg" alt="Portfolio Item 3" class="portfolio-img">
+                </div>
+                <div class="portfolio-item" data-category="app">
+                    <img src="assets/images/portfolio-4.jpg" alt="Portfolio Item 4" class="portfolio-img">
+                </div>
+                <div class="portfolio-item" data-category="books">
+                    <img src="assets/images/portfolio-5.jpg" alt="Portfolio Item 5" class="portfolio-img">
+                </div>
+                <div class="portfolio-item" data-category="product">
+                    <img src="assets/images/portfolio-6.jpg" alt="Portfolio Item 6" class="portfolio-img">
+                </div>
+            </div>
+
+            <!-- Modal for portfolio image -->
+            <div id="portfolio-modal" class="portfolio-modal">
+                <span class="close-modal">&times;</span>
+                <img class="modal-content" id="modal-img" alt="Portfolio Image">
+                <div id="caption"></div>
+            </div>
+        </section>
+
+        <!-- Inlined Services Section -->
+        <section class="services" id="services">
+            <h1>Services</h1>
+            <p>Offering a range of professional services to help bring your ideas to life. From web development and
+                UI/UX design
+                to software solutions and technical consulting, I provide high-quality services tailored to meet your
+                specific needs.</p>
+
+            <div class="services-list">
+                <div class="service-item">
+                    <h3>Web Development</h3>
+                    <p>Creating responsive, modern websites and web applications using the latest technologies and best
+                        practices to deliver exceptional user experiences.</p>
+                </div>
+                <div class="service-item">
+                    <h3>UI/UX Design</h3>
+                    <p>Designing intuitive and visually appealing user interfaces with a focus on user experience,
+                        ensuring seamless interaction and engagement.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Software Solutions</h3>
+                    <p>Developing custom software solutions tailored to your business needs, from desktop applications
+                        to complex enterprise systems.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Technical Consulting</h3>
+                    <p>Providing expert advice on technology stack selection, architecture design, and implementation
+                        strategies for your projects.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Data Analytics</h3>
+                    <p>Transforming raw data into actionable insights through advanced analytics, visualization, and
+                        reporting solutions.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Cybersecurity</h3>
+                    <p>Implementing robust security measures and best practices to protect your digital assets and
+                        ensure data integrity.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Inlined Contact Section -->
+        <section class="contact" id="contact">
+            <h1>Contact</h1>
+            <div class="contact-wrapper">
+                <div class="contact-left">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="icon address-icon"></div>
+                            <h3>Address</h3>
+                            <p>A108 Adam Street, New York, NY 535022</p>
+                        </div>
+                        <div class="contact-item">
+                            <div class="icon phone-icon"></div>
+                            <h3>Call Us</h3>
+                            <p>+1 5589 55488 55</p>
+                        </div>
+                        <div class="contact-item">
+                            <div class="icon email-icon"></div>
+                            <h3>Email Us</h3>
+                            <p>info@example.com</p>
+                        </div>
+                    </div>
+                    <div class="map-container">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.1234567890123!2d-74.006015284593!3d40.71277577933044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a316f1f1f1f%3A0x123456789abcdef!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1610000000000!5m2!1sen!2sus"
+                            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+
+                <div class="contact-right">
+                    <form class="contact-form" action="#" method="post">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" name="name" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Your Email</label>
+                                <input type="email" id="email" name="email" required />
+                            </div>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required />
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <?php include 'assets/includes/footer.php'; ?>
+    </main>
+    <script src="assets/css-js/main.js"></script>
+</body>
+
+</html>
