@@ -95,3 +95,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
   type();
 });
+
+// Function to submit the contact form using AJAX and show notification popup
+async function submitForm(event) {
+    event.preventDefault();
+
+    const form = document.getElementById('contactForm');
+    const formData = new FormData(form);
+
+    try {
+        const response = await fetch(form.action || 'assets/includes/send_email.php', {
+            method: 'POST',
+            body: formData,
+        });
+
+        const result = await response.json();
+
+        showNotification(result.message, result.success);
+
+        if (result.success) {
+            form.reset();
+        }
+    } catch (error) {
+        showNotification('An error occurred while sending the message.', false);
+    }
+
+    return false;
+}
+
+// Function to show notification popup
+function showNotification(message, success) {
+    const notification = document.getElementById('notification');
+    notification.textContent = message;
+    notification.style.backgroundColor = success ? '#4CAF50' : '#f44336';
+    notification.style.display = 'block';
+
+    setTimeout(() => {
+        notification.style.display = 'none';
+    }, 5000);
+}

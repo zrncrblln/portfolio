@@ -1,3 +1,19 @@
+<?php
+include 'assets/includes/send_email.php';
+
+$message = '';
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $name = $_POST['name'] ?? '';
+    $email = $_POST['email'] ?? '';
+    $subject = $_POST['subject'] ?? '';
+    $message_text = $_POST['message'] ?? '';
+
+    $result = sendContactEmail($name, $email, $subject, $message_text);
+    $message = $result['message'];
+    $success = $result['success'];
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -215,7 +231,7 @@
                 </div>
 
                 <div class="contact-right">
-                    <form class="contact-form" action="#" method="post">
+                    <form class="contact-form" id="contactForm" action="" method="post" onsubmit="return submitForm(event)">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="name">Your Name</label>
@@ -236,6 +252,7 @@
                         </div>
                         <button type="submit" class="btn btn-primary">Send Message</button>
                     </form>
+                    <div id="notification" style="display:none; position: fixed; top: 20px; right: 20px; background-color: #4CAF50; color: white; padding: 15px; border-radius: 5px; z-index: 1000; max-width: 300px; word-wrap: break-word;"></div>
                 </div>
             </div>
         </section>
