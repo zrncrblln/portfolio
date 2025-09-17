@@ -1,6 +1,2 @@
-- [x] Update portfolio section description in index.php to reflect certificates and skills
-- [x] Change portfolio filters to ALL, CERTIFICATES, SKILLS
-- [x] Replace portfolio items with certificates and skills content
-- [x] Add certificates items with data-category="certificates"
-- [x] Add skills items with data-category="skills"
-- [ ] Test the filtering functionality
+- [x] Add download CV button to resume section in index.php
+- [x] Add design to the download CV button

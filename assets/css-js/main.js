@@ -6,6 +6,7 @@ burgerMenu.addEventListener('click', () => {
   const expanded = burgerMenu.getAttribute('aria-expanded') === 'true' || false;
   burgerMenu.setAttribute('aria-expanded', !expanded);
   sidebar.classList.toggle('sidebar-open');
+  burgerMenu.classList.toggle('open'); // Toggle 'open' class on burger menu for animation
 });
 
 // Smooth scrolling for nav links
