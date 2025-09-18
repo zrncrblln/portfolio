@@ -156,7 +156,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         </div>
                     </div>
                 </div>
-                <a href="assets/Corbillon, Zoren-CV.pdf" download class="btn btn-primary"><i class="fas fa-download"></i> Download CV</a>
+                <a href="assets/Corbillon, Zoren-CV.pdf" download class="btn btn-primary btn-cv"><i
+                        class="fas fa-download"></i> Download CV</a>
             </div>
         </div>
 
@@ -176,62 +177,74 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 <div class="portfolio-items">
                     <div class="portfolio-item" data-category="certificates">
+                        <img src="assets/images/c1.jpg" alt="Certificate of Attendance – Marketing ME Live (Career Session)" class="portfolio-img">
                         <h3>Certificate of Attendance – Marketing ME Live (Career Session)</h3>
                         <p>Issuer: Jobs180.com, Inc.</p>
                         <p>Issued May 2025</p>
                     </div>
                     <div class="portfolio-item" data-category="certificates">
+                        <img src="assets/images/c2.jpg" alt="Professionalism (US English)" class="portfolio-img">
                         <h3>Professionalism (US English)</h3>
                         <p>Issuer: Wadhwani Foundation</p>
                         <p>Issued Apr 2025</p>
                     </div>
                     <div class="portfolio-item" data-category="certificates">
+                        <img src="assets/images/c3.jpg" alt="Start-up Mindset (US English)" class="portfolio-img">
                         <h3>Start-up Mindset (US English)</h3>
                         <p>Issuer: Wadhwani Foundation</p>
                         <p>Issued Apr 2025</p>
                     </div>
                     <div class="portfolio-item" data-category="certificates">
+                        <img src="assets/images/c4.jpg" alt="Certified Data Center Technician (CDCT)" class="portfolio-img">
                         <h3>Certified Data Center Technician (CDCT)</h3>
                         <p>Issuer: East West International Educational Specialists, Inc.</p>
                         <p>Issued Nov 2024</p>
                     </div>
                     <div class="portfolio-item" data-category="certificates">
+                        <img src="assets/images/c5.jpg" alt="Certified Ethical Hacker (CEH)" class="portfolio-img">
                         <h3>Certified Ethical Hacker (CEH)</h3>
                         <p>Issuer: Cisco</p>
                         <p>Issued Nov 2024</p>
                     </div>
                     <div class="portfolio-item" data-category="certificates">
+                        <img src="assets/images/c6.jpg" alt="Python Essentials 1" class="portfolio-img">
                         <h3>Python Essentials 1</h3>
                         <p>Issuer: Cisco</p>
                         <p>Issued Nov 2024</p>
                     </div>
                     <div class="portfolio-item" data-category="certificates">
+                        <img src="assets/images/c7.jpg" alt="Data Analytics Essentials" class="portfolio-img">
                         <h3>Data Analytics Essentials</h3>
                         <p>Issuer: Cisco</p>
                         <p>Issued Oct 2024</p>
                     </div>
                     <div class="portfolio-item" data-category="certificates">
+                        <img src="assets/images/c8.jpg" alt="Introduction to Data Science" class="portfolio-img">
                         <h3>Introduction to Data Science</h3>
                         <p>Issuer: Cisco</p>
                         <p>Issued Oct 2024</p>
                     </div>
                     <div class="portfolio-item" data-category="certificates">
+                        <img src="assets/images/c9.jpg" alt="Introduction to Cybersecurity" class="portfolio-img">
                         <h3>Introduction to Cybersecurity</h3>
                         <p>Issuer: Cisco</p>
                         <p>Issued May 2024</p>
                     </div>
                     <div class="portfolio-item" data-category="certificates">
+                        <img src="assets/images/c10.jpg" alt="Certificate of Appreciation – General Assembly: Empowering Tomorrow" class="portfolio-img">
                         <h3>Certificate of Appreciation – General Assembly: Empowering Tomorrow</h3>
                         <p>Issuer: Institute of Computer Engineers of the Philippines – Student Edition</p>
                         <p>Issued Jan 2024</p>
                     </div>
                     <div class="portfolio-item" data-category="skills">
+                        <i class="fas fa-cogs"></i>
                         <h3>Technical Skills</h3>
                         <p>Ethical Hacking · Penetration Testing · Network Security · Vulnerability Assessment · Data
                             Analytics (SQL, Excel, Tableau) · Python Programming · Debugging · Web Development · Data
                             Science Basics · Server & Data Center Management</p>
                     </div>
                     <div class="portfolio-item" data-category="skills">
+                        <i class="fas fa-user-tie"></i>
                         <h3>Professional Skills</h3>
                         <p>Career Development · Personal Branding · Public Speaking · Professional Networking · Business
                             Etiquette · Team Collaboration · Problem Solving · Strategic Planning · Creativity &
@@ -312,23 +325,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <div class="contact-item">
                                 <div class="icon address-icon"></div>
                                 <h3>Address</h3>
-                                <p>Rizal, Province of Nueva Ecija, Philippines 3127</p>
+                                <p>Rizal, Nueva Ecija, Philippines 3127</p>
                             </div>
                             <div class="contact-item">
                                 <div class="icon phone-icon"></div>
-                                <h3>Call Us</h3>
+                                <h3>Message</h3>
                                 <p>+63 916 610 0257</p>
                             </div>
                             <div class="contact-item">
                                 <div class="icon email-icon"></div>
-                                <h3>Email Us</h3>
+                                <h3>Email</h3>
                                 <p>zorencorbillon@gmail.com</p>
                             </div>
                         </div>
                         <div class="map-container">
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.1234567890123!2d-74.006015284593!3d40.71277577933044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a316f1f1f1f%3A0x123456789abcdef!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1610000000000!5m2!1sen!2sus"
-                                width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                                width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+                            </iframe>
                         </div>
                     </div>
 

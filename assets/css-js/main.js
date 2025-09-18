@@ -47,7 +47,9 @@ const modalImg = document.querySelector('.portfolio-modal .modal-content');
 const captionText = document.getElementById('caption');
 const closeModal = document.querySelector('.portfolio-modal .close-modal');
 
-portfolioItems.forEach(item => {
+const certificateItems = document.querySelectorAll('.portfolio-item[data-category="certificates"]');
+
+certificateItems.forEach(item => {
   item.addEventListener('click', () => {
     modal.style.display = 'block';
     modalImg.src = item.querySelector('img').src;

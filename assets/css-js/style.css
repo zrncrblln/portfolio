@@ -136,7 +136,7 @@ p {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 3px;
+    gap: 6px;
     padding-left: 0;
     width: 100%;
 }
@@ -506,6 +506,14 @@ main.container {
     border-radius: 8px;
 }
 
+.portfolio-item i {
+    font-size: 5rem;
+    color: #000000;
+    margin-bottom: 50px;
+    display: block;
+    text-align: center;
+}
+
 /* Services */
 .services {
     background-color: #e9f0fb;
@@ -715,6 +723,11 @@ main.container {
 
 .btn.btn-primary:hover {
     background: #2563eb;
+}
+
+.btn-cv {
+    padding: 12px 25px;
+    font-size: 0.9rem;
 }
 
 /* Portfolio Filters */
