@@ -99,7 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <div class="col-6">
                         <div class="summary timeline-item">
                             <h3>Summary</h3>
-                            <p><strong>Zoren A. Corbillon</strong></p>
+                            <h4>Zoren A. Corbillon</h4>
                             <p><em>I am a Computer Engineering graduate with hands-on experience in web development,
                                     database management, and system automation. Skilled in PHP, Laravel, JavaScript,
                                     MySQL,
@@ -117,9 +117,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         </div>
                         <div class="education timeline-item">
                             <h3>Education</h3>
-                            <p><strong>Bachelor of Science in Computer Engineering (2021 - 2025)</strong></p>
+                            <h4>Bachelor of Science in Computer Engineering (2021 - 2025)</h4>
                             <p>Wesleyan University-Philippines</p>
-                            <p><strong>Senior High School - STEM (2019 - 2021)</strong></p>
+                            <h4>Senior High School - STEM (2019 - 2021)</h4>
                             <p>Wesleyan University-Philippines</p>
                         </div>
                     </div>
