@@ -86,9 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="section resume-section" id="resume">
             <div class="section-container">
                 <h2>Resume</h2>
-                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-                    consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
-                    fugiat sit in iste officiis commodi quidem hic quas.</p>
+                <p>Computer Engineering graduate with hands-on experience in web development, automation, and database management. Skilled in PHP, Laravel, JavaScript, and MySQL, with proven contributions to projects like the iSyn-app. Passionate about building scalable, user-friendly solutions and continuously improving through collaboration and innovation.</p>
                 <div class="row">
                     <div class="col-6">
                         <div class="summary timeline-item">
@@ -264,7 +262,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <!-- Inlined Services Section -->
         <section class="services" id="services">
             <div class="section-container bg-white">
-                <h1>Services</h1>
+                <h2>Services</h2>
                 <p>Offering a range of professional services to help bring your ideas to life. From web development and
                     UI/UX design
                     to software solutions and technical consulting, I provide high-quality services tailored to meet
@@ -318,7 +316,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <!-- Inlined Contact Section -->
         <section class="contact" id="contact">
             <div class="section-container bg-white">
-                <h1>Contact</h1>
+                <h2>Contact</h2>
                 <div class="contact-wrapper">
                     <div class="contact-left">
                         <div class="contact-info">
