@@ -68,13 +68,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         </p>
                         <div class="about-info">
                             <div>
-                                <p><strong>Birthday:</strong> 15 June 2003</p>
+                                <p><strong>Birthday:</strong> June 15, 2003</p>
                                 <p><strong>Phone:</strong> +63 916 610 0257</p>
                                 <p><strong>City:</strong> Rizal, Nueva Ecija, Philippines</p>
                             </div>
                             <div>
                                 <p><strong>Age:</strong> 22</p>
-                                <p><strong>Degree:</strong> Bachelor of Science major in Computer Engineering</p>
+                                <p><strong>Degree:</strong> BS major in Computer Engineering</p>
                                 <p><strong>Email:</strong> zorencorbillon@gmail.com</p>
                             </div>
                         </div>
@@ -89,7 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <!-- Resume Section -->
         <div class="section resume-section" id="resume">
-            <div class="section-container">
+            <div class="section-container bg-white">
                 <h2>Resume</h2>
                 <p>Computer Engineering graduate with hands-on experience in web development, automation, and database
                     management. Skilled in PHP, Laravel, JavaScript, and MySQL, with proven contributions to projects
@@ -164,7 +164,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
                 <a href="assets/Corbillon, Zoren-CV.pdf" download class="btn btn-primary btn-cv"><i
                         class="fas fa-download"></i> Download CV</a>
-            </div>
+        </div>
         </div>
 
         <!-- Portfolio Section -->
