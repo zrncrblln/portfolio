@@ -20,6 +20,7 @@
     </div>
     <nav class="sidebar-nav" style="margin-top:0;">
         <ul class="nav-links nav-small">
+            <!-- Dynamic navigation links: If on index.php, link to sections with #anchor, else link to separate pages -->
             <li><a href="<?php echo (basename($_SERVER['PHP_SELF']) == 'index.php') ? '#home' : 'index.php'; ?>"><i
                         class="fas fa-home"></i> <span class="nav-label">Home</span></a></li>
             <li><a href="<?php echo (basename($_SERVER['PHP_SELF']) == 'index.php') ? '#about' : 'about.php'; ?>"><i

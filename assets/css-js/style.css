@@ -558,6 +558,21 @@ main.container {
     color: #475569;
 }
 
+/* See More Link Styling */
+.see-more {
+    display: inline-block;
+    margin-top: 10px;
+    font-weight: 600;
+    color: #3b82f6;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.see-more:hover {
+    color: #2563eb;
+}
+
 /* Contact */
 .contact {
     background-color: #f4f7fa;
@@ -850,7 +865,7 @@ main.container {
     background: #1e293b;
     color: #fff;
     text-align: center;
-    margin-top: 30px;
+    margin-top: 20px;
     
 }
 
@@ -869,7 +884,7 @@ main.container {
 
 .footer-social a {
     color: #94a3b8;
-    font-size: 1.5rem;
+    font-size: 1rem;
     margin: 0 10px;
     transition: color 0.3s;
     text-decoration: none;

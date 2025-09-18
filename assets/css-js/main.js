@@ -1,68 +1,133 @@
-// Burger menu toggle
+// Constants and Variables
 const burgerMenu = document.querySelector('.burger-menu');
 const sidebar = document.getElementById('sidebar');
-
-burgerMenu.addEventListener('click', () => {
-  const expanded = burgerMenu.getAttribute('aria-expanded') === 'true' || false;
-  burgerMenu.setAttribute('aria-expanded', !expanded);
-  sidebar.classList.toggle('sidebar-open');
-  burgerMenu.classList.toggle('open'); // Toggle 'open' class on burger menu for animation
-});
-
-// Smooth scrolling for nav links
-document.querySelectorAll('.nav-links a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
-  });
-});
-
-// Portfolio filtering
 const filters = document.querySelectorAll('.portfolio-filters .filter');
 const portfolioItems = document.querySelectorAll('.portfolio-item');
-
-filters.forEach(filter => {
-  filter.addEventListener('click', (e) => {
-    e.preventDefault();
-    filters.forEach(f => f.classList.remove('active'));
-    filter.classList.add('active');
-    const filterValue = filter.getAttribute('data-filter');
-
-    portfolioItems.forEach(item => {
-      if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-        item.style.display = 'block';
-      } else {
-        item.style.display = 'none';
-      }
-    });
-  });
-});
-
-// Portfolio modal popup
 const modal = document.querySelector('.portfolio-modal');
 const modalImg = document.querySelector('.portfolio-modal .modal-content');
 const captionText = document.getElementById('caption');
 const closeModal = document.querySelector('.portfolio-modal .close-modal');
-
 const certificateItems = document.querySelectorAll('.portfolio-item[data-category="certificates"]');
 
+// Event Listeners
+document.addEventListener('DOMContentLoaded', init);
+
+// Burger menu toggle
+if (burgerMenu) {
+  burgerMenu.addEventListener('click', toggleBurgerMenu);
+}
+
+// Smooth scrolling for nav links
+document.querySelectorAll('.nav-links a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', handleSmoothScroll);
+});
+
+// Portfolio filtering
+filters.forEach(filter => {
+  filter.addEventListener('click', handlePortfolioFilter);
+});
+
+// Portfolio modal popup
 certificateItems.forEach(item => {
-  item.addEventListener('click', () => {
-    modal.style.display = 'block';
-    modalImg.src = item.querySelector('img').src;
-    captionText.textContent = item.querySelector('img').alt;
+  item.addEventListener('click', openModal);
+});
+
+if (closeModal) {
+  closeModal.addEventListener('click', closeModalHandler);
+}
+
+// Contact form submission
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  contactForm.addEventListener('submit', submitForm);
+}
+
+// Functions
+function init() {
+  // Initialize See More / See Less for service descriptions
+  initServiceDescriptions();
+
+  // Initialize typing animation
+  initTypingAnimation();
+}
+
+function toggleBurgerMenu() {
+  const expanded = burgerMenu.getAttribute('aria-expanded') === 'true' || false;
+  burgerMenu.setAttribute('aria-expanded', !expanded);
+  sidebar.classList.toggle('sidebar-open');
+  burgerMenu.classList.toggle('open');
+}
+
+function handleSmoothScroll(e) {
+  e.preventDefault();
+  const target = document.querySelector(this.getAttribute('href'));
+  if (target) {
+    target.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
+function handlePortfolioFilter(e) {
+  e.preventDefault();
+  filters.forEach(f => f.classList.remove('active'));
+  this.classList.add('active');
+  const filterValue = this.getAttribute('data-filter');
+
+  portfolioItems.forEach(item => {
+    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+      item.style.display = 'block';
+    } else {
+      item.style.display = 'none';
+    }
   });
-});
+}
 
-closeModal.addEventListener('click', () => {
+function initServiceDescriptions() {
+  const maxLength = 150;
+  const serviceDescriptions = document.querySelectorAll('.service-description');
+
+  serviceDescriptions.forEach(desc => {
+    const fullText = desc.textContent.trim();
+    if (fullText.length > maxLength) {
+      const truncatedText = fullText.slice(0, maxLength) + '...';
+      desc.dataset.fullText = fullText;
+      desc.textContent = truncatedText;
+
+      const seeMoreLink = desc.nextElementSibling;
+      if (seeMoreLink && seeMoreLink.classList.contains('see-more')) {
+        seeMoreLink.style.display = 'inline';
+        seeMoreLink.textContent = 'See more...';
+
+        seeMoreLink.addEventListener('click', function (e) {
+          e.preventDefault();
+          if (desc.textContent.endsWith('...')) {
+            desc.textContent = desc.dataset.fullText;
+            seeMoreLink.textContent = 'See less';
+          } else {
+            desc.textContent = truncatedText;
+            seeMoreLink.textContent = 'See more...';
+          }
+        });
+      }
+    } else {
+      const seeMoreLink = desc.nextElementSibling;
+      if (seeMoreLink && seeMoreLink.classList.contains('see-more')) {
+        seeMoreLink.style.display = 'none';
+      }
+    }
+  });
+}
+
+function openModal() {
+  modal.style.display = 'block';
+  modalImg.src = this.querySelector('img').src;
+  captionText.textContent = this.querySelector('img').alt;
+}
+
+function closeModalHandler() {
   modal.style.display = 'none';
-});
+}
 
-// Typing animation for hero highlight text
-document.addEventListener('DOMContentLoaded', () => {
+function initTypingAnimation() {
   const highlight = document.querySelector('.highlight');
   if (!highlight) return;
 
@@ -98,43 +163,41 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   type();
-});
-
-// Function to submit the contact form using AJAX and show notification popup
-async function submitForm(event) {
-    event.preventDefault();
-
-    const form = document.getElementById('contactForm');
-    const formData = new FormData(form);
-
-    try {
-        const response = await fetch(form.action || 'assets/includes/send_email.php', {
-            method: 'POST',
-            body: formData,
-        });
-
-        const result = await response.json();
-
-        showNotification(result.message, result.success);
-
-        if (result.success) {
-            form.reset();
-        }
-    } catch (error) {
-        showNotification('An error occurred while sending the message.', false);
-    }
-
-    return false;
 }
 
-// Function to show notification popup
+async function submitForm(event) {
+  event.preventDefault();
+
+  const form = this;
+  const formData = new FormData(form);
+
+  try {
+    const response = await fetch(form.action || 'assets/includes/send_email.php', {
+      method: 'POST',
+      body: formData,
+    });
+
+    const result = await response.json();
+
+    showNotification(result.message, result.success);
+
+    if (result.success) {
+      form.reset();
+    }
+  } catch (error) {
+    showNotification('An error occurred while sending the message.', false);
+  }
+}
+
 function showNotification(message, success) {
-    const notification = document.getElementById('notification');
+  const notification = document.getElementById('notification');
+  if (notification) {
     notification.textContent = message;
     notification.style.backgroundColor = success ? '#4CAF50' : '#f44336';
     notification.style.display = 'block';
 
     setTimeout(() => {
-        notification.style.display = 'none';
+      notification.style.display = 'none';
     }, 5000);
+  }
 }
