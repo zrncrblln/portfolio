@@ -338,7 +338,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         </div>
                         <div class="map-container">
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.1234567890123!2d-74.006015284593!3d40.71277577933044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a316f1f1f1f%3A0x123456789abcdef!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1610000000000!5m2!1sen!2sus"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.1234567890123!2d121.123456789!3d15.123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c123456789ab%3A0x123456789abcdef!2sRizal%2C%20Nueva%20Ecija%2C%20Philippines!5e0!3m2!1sen!2sus!4v1610000000000!5m2!1sen!2sus"
                                 width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
                             </iframe>
                         </div>
