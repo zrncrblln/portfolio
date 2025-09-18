@@ -14,13 +14,11 @@ A modern, responsive personal portfolio website showcasing my journey as a Compu
 ## 🛠️ Technologies Used
 
 - **Frontend**: HTML5, CSS3, JavaScript
-- **Backend**: PHP
 - **Styling**: Custom CSS with animations and responsive design
 - **Icons**: Font Awesome
 
 ## 📋 Prerequisites
 
-- XAMPP or any local server with PHP support
 - Web browser
 
 ## 🔧 Installation & Setup
@@ -30,38 +28,24 @@ A modern, responsive personal portfolio website showcasing my journey as a Compu
    git clone https://github.com/zrncrblln/portfolio.git
    ```
 
-2. Move the project to your XAMPP htdocs directory:
-   ```bash
-   mv portfolio /path/to/xampp/htdocs/
-   ```
-
-3. Start XAMPP and ensure Apache is running
-
-4. Open your browser and navigate to:
-   ```
-   http://localhost/portfolio
-   ```
+2. Open index.html in your web browser
 
 ## 📁 Project Structure
 
 ```
 portfolio/
-├── index.php                 # Main page
+├── index.html                # Main page
 ├── assets/
 │   ├── css-js/
 │   │   ├── style.css         # Main stylesheet
 │   │   └── main.js           # JavaScript functionality
-│   ├── images/
-│   │   └── zz.JPG            # Profile picture
-│   └── includes/
-│       ├── header.php        # HTML head and navigation
-│       └── footer.php        # Footer content
+│   └── images/               # Portfolio images and profile pictures
 └── README.md                 # Project documentation
 ```
 
 ## 🎯 Skills Highlighted
 
-- Web Development (HTML, CSS, JavaScript, PHP)
+- Web Development (HTML, CSS, JavaScript)
 - Programming Languages (Java, Python)
 - Database Management (MySQL)
 - Data Analytics & Visualization

@@ -36,10 +36,16 @@ if (closeModal) {
   closeModal.addEventListener('click', closeModalHandler);
 }
 
-// Contact form submission
+// Contact form submission with Formspree
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
-  contactForm.addEventListener('submit', submitForm);
+  contactForm.addEventListener('formspree:submit', function() {
+    showNotification('Message sent successfully!', true);
+    contactForm.reset();
+  });
+  contactForm.addEventListener('formspree:error', function() {
+    showNotification('An error occurred while sending the message.', false);
+  });
 }
 
 // Functions
@@ -165,29 +171,7 @@ function initTypingAnimation() {
   type();
 }
 
-async function submitForm(event) {
-  event.preventDefault();
 
-  const form = this;
-  const formData = new FormData(form);
-
-  try {
-    const response = await fetch(form.action || 'assets/includes/send_email.php', {
-      method: 'POST',
-      body: formData,
-    });
-
-    const result = await response.json();
-
-    showNotification(result.message, result.success);
-
-    if (result.success) {
-      form.reset();
-    }
-  } catch (error) {
-    showNotification('An error occurred while sending the message.', false);
-  }
-}
 
 function showNotification(message, success) {
   const notification = document.getElementById('notification');

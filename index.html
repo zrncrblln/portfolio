@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,11 +8,41 @@
     <link rel="stylesheet" href="assets/css-js/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://formspree.io/js/form.js"></script>
 </head>
 
 <body>
-    <?php include 'assets/includes/sidebar.php'; ?>
+    <!-- Sidebar -->
+    <link rel="stylesheet" href="assets/css-js/style.css" />
+    <button class="burger-menu" aria-label="Toggle sidebar" aria-expanded="false" aria-controls="sidebar">
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+    </button>
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-profile">
+            <img src="assets/images/zz.JPG"
+                srcset="assets/images/zz-240.jpg 240w, assets/images/zz-120.jpg 120w, assets/images/zz.JPG 6240w"
+                sizes="(max-width: 600px) 120px, (max-width: 900px) 240px, 280px" alt="Profile Picture" class="profile-img">
+            <h2 class="profile-name">Zoren Corbillon</h2>
+            <p class="profile-subtitle">Computer Engineer</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/zrncrblln" aria-label="Facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/zrncrblln/" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/zoren-corbillon-96719a138" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/zrncrblln" aria-label="GitHub" title="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+        <nav class="sidebar-nav" style="margin-top:0;">
+            <ul class="nav-links nav-small">
+                <li><a href="#home"><i class="fas fa-home"></i> <span class="nav-label">Home</span></a></li>
+                <li><a href="#about"><i class="fas fa-user"></i> <span class="nav-label">About</span></a></li>
+                <li><a href="#resume"><i class="fas fa-file-alt"></i> <span class="nav-label">Resume</span></a></li>
+                <li><a href="#portfolio"><i class="fas fa-image"></i> <span class="nav-label">Portfolio</span></a></li>
+                <li><a href="#services"><i class="fas fa-cogs"></i> <span class="nav-label">Services</span></a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> <span class="nav-label">Contact</span></a></li>
+            </ul>
+        </nav>
+    </aside>
 
     <main class="container">
         <!-- Hero Section -->
@@ -29,23 +57,12 @@
         <section class="about" id="about">
             <div class="section-container bg-white">
                 <h2>About</h2>
-                <p>Hello! I’m Zoren A. Corbillon, a Computer Engineering graduate from Wesleyan University-Philippines
-                    with
-                    a strong passion for software development and problem-solving through technology. My academic
-                    background, complemented by certifications in programming, data analytics, cybersecurity, and
-                    ethical
-                    hacking, has
-                    equipped me with the skills to design, build, and enhance software solutions. I bring creativity,
-                    adaptability, and a proactive mindset to every project and thrive in collaborative environments. I’m
-                    eager to pursue opportunities as a Software Engineer, Computer Programmer, or related roles, where I
-                    can
-                    apply my skills to create real-world impact.</p>
+                <p>Hello! I'm Zoren A. Corbillon, a Computer Engineering graduate from Wesleyan University-Philippines with a strong passion for software development and problem-solving through technology. My academic background, complemented by certifications in programming, data analytics, cybersecurity, and ethical hacking, has equipped me with the skills to design, build, and enhance software solutions. I bring creativity, adaptability, and a proactive mindset to every project and thrive in collaborative environments. I'm eager to pursue opportunities as a Software Engineer, Computer Programmer, or related roles, where I can apply my skills to create real-world impact.</p>
                 <div class="about-content">
                     <img src="assets/images/zz.JPG" alt="Zoren Corbillon" class="about-image">
                     <div class="about-details">
                         <h3>Software Engineer & Web Developer.</h3>
-                        <p><em> Transforming ideas into secure, modern, and visually stunning digital experiences.</em>
-                        </p>
+                        <p><em> Transforming ideas into secure, modern, and visually stunning digital experiences.</em></p>
                         <div class="about-info">
                             <div>
                                 <p><strong>Birthday:</strong> June 15, 2003</p>
@@ -58,10 +75,7 @@
                                 <p><strong>Email:</strong> zorencorbillon@gmail.com</p>
                             </div>
                         </div>
-                        <p>Committed to building reliable, user-friendly, and scalable web solutions. I focus on
-                            creating efficient websites, databases, and automation systems that help businesses improve
-                            performance and achieve their goals.
-                        </p>
+                        <p>Committed to building reliable, user-friendly, and scalable web solutions. I focus on creating efficient websites, databases, and automation systems that help businesses improve performance and achieve their goals.</p>
                     </div>
                 </div>
             </div>
@@ -71,24 +85,13 @@
         <div class="section resume-section" id="resume">
             <div class="section-container bg-white">
                 <h2>Resume</h2>
-                <p>Computer Engineering graduate with hands-on experience in web development, automation, and database
-                    management. Skilled in PHP, Laravel, JavaScript, and MySQL, with proven contributions to projects
-                    like the iSyn-app. Passionate about building scalable, user-friendly solutions and continuously
-                    improving through collaboration and innovation.</p>
+                <p>Computer Engineering graduate with hands-on experience in web development, automation, and database management. Skilled in PHP, Laravel, JavaScript, and MySQL, with proven contributions to projects like the iSyn-app. Passionate about building scalable, user-friendly solutions and continuously improving through collaboration and innovation.</p>
                 <div class="row">
                     <div class="col-6">
                         <div class="summary timeline-item">
                             <h3>Summary</h3>
                             <h4>Zoren A. Corbillon</h4>
-                            <p><em>I am a Computer Engineering graduate with hands-on experience in web development,
-                                    database management, and system automation. Skilled in PHP, Laravel, JavaScript,
-                                    MySQL,
-                                    and Bootstrap, I have contributed to projects such as a School Management System and
-                                    the
-                                    iSyn-app automation tool. Beyond technical expertise, I bring strong
-                                    problem-solving,
-                                    adaptability, and collaboration skills, with a passion for creating scalable and
-                                    user-friendly solutions.</em></p>
+                            <p><em>I am a Computer Engineering graduate with hands-on experience in web development, database management, and system automation. Skilled in PHP, Laravel, JavaScript, MySQL, and Bootstrap, I have contributed to projects such as a School Management System and the iSyn-app automation tool. Beyond technical expertise, I bring strong problem-solving, adaptability, and collaboration skills, with a passion for creating scalable and user-friendly solutions.</em></p>
                             <ul>
                                 <li>Wesleyan University-Philippines</li>
                                 <li>+63 916 610 0257</li>
@@ -109,17 +112,11 @@
                             <div class="experience-item">
                                 <h4>Web Developer Intern</h4>
                                 <p class="date">06/2024 - 08/2024</p>
-                                <p class="location"><em>AKSI iSynergies, Cabanatuan City, Province of Nueva Ecija,
-                                        Philippines</em></p>
+                                <p class="location"><em>AKSI iSynergies, Cabanatuan City, Province of Nueva Ecija, Philippines</em></p>
                                 <ul>
-                                    <li>Collaborated with the development team on coding, debugging, testing, and
-                                        database
-                                        management, ensuring smoother system performance.</li>
-                                    <li>Enhanced system functionality and improved user interface design, contributing
-                                        to
-                                        better usability and user experience.</li>
-                                    <li>Actively supported the full development cycle, from troubleshooting issues to
-                                        implementing small feature upgrades.</li>
+                                    <li>Collaborated with the development team on coding, debugging, testing, and database management, ensuring smoother system performance.</li>
+                                    <li>Enhanced system functionality and improved user interface design, contributing to better usability and user experience.</li>
+                                    <li>Actively supported the full development cycle, from troubleshooting issues to implementing small feature upgrades.</li>
                                 </ul>
                             </div>
                             <div class="experience-item">
@@ -127,33 +124,24 @@
                                 <p class="date">06/2024 - 08/2024</p>
                                 <p class="location"><em>AKSI iSynergies</em></p>
                                 <ul>
-                                    <li>Contributed to the development of iSyn-app, an automation platform for managing
-                                        inventory, sales, vouchers, and data.</li>
-                                    <li>Assisted in coding, debugging, and feature enhancements, improving overall
-                                        system
-                                        performance and reliability.</li>
-                                    <li>Collaborated on UI/UX improvements, ensuring a more intuitive and user-friendly
-                                        interface.</li>
-                                    <li>Supported database management and testing tasks to maintain data accuracy and
-                                        system
-                                        stability.</li>
+                                    <li>Contributed to the development of iSyn-app, an automation platform for managing inventory, sales, vouchers, and data.</li>
+                                    <li>Assisted in coding, debugging, and feature enhancements, improving overall system performance and reliability.</li>
+                                    <li>Collaborated on UI/UX improvements, ensuring a more intuitive and user-friendly interface.</li>
+                                    <li>Supported database management and testing tasks to maintain data accuracy and system stability.</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-                <a href="assets/Corbillon, Zoren-CV.pdf" download class="btn btn-primary btn-cv"><i
-                        class="fas fa-download"></i> Download CV</a>
-        </div>
+                <a href="assets/Corbillon, Zoren-CV.pdf" download class="btn btn-primary btn-cv"><i class="fas fa-download"></i> Download CV</a>
+            </div>
         </div>
 
         <!-- Portfolio Section -->
         <section class="portfolio" id="portfolio">
             <div class="section-container bg-white">
                 <h2>Portfolio</h2>
-                <p>Showcasing my certificates and skills. Browse through my certifications and technical proficiencies
-                    that
-                    demonstrate my expertise and passion for continuous learning.</p>
+                <p>Showcasing my certificates and skills. Browse through my certifications and technical proficiencies that demonstrate my expertise and passion for continuous learning.</p>
 
                 <div class="portfolio-filters">
                     <a href="#" class="filter active" data-filter="all">ALL</a>
@@ -163,8 +151,7 @@
 
                 <div class="portfolio-items">
                     <div class="portfolio-item" data-category="certificates">
-                        <img src="assets/images/c1.jpg"
-                            alt="Certificate of Attendance – Marketing ME Live (Career Session)" class="portfolio-img">
+                        <img src="assets/images/c1.jpg" alt="Certificate of Attendance – Marketing ME Live (Career Session)" class="portfolio-img">
                         <h3>Certificate of Attendance – Marketing ME Live (Career Session)</h3>
                         <p>Issuer: Jobs180.com, Inc.</p>
                         <p>Issued May 2025</p>
@@ -182,8 +169,7 @@
                         <p>Issued Apr 2025</p>
                     </div>
                     <div class="portfolio-item" data-category="certificates">
-                        <img src="assets/images/c4.jpg" alt="Certified Data Center Technician (CDCT)"
-                            class="portfolio-img">
+                        <img src="assets/images/c4.jpg" alt="Certified Data Center Technician (CDCT)" class="portfolio-img">
                         <h3>Certified Data Center Technician (CDCT)</h3>
                         <p>Issuer: East West International Educational Specialists, Inc.</p>
                         <p>Issued Nov 2024</p>
@@ -219,9 +205,7 @@
                         <p>Issued May 2024</p>
                     </div>
                     <div class="portfolio-item" data-category="certificates">
-                        <img src="assets/images/c10.jpg"
-                            alt="Certificate of Appreciation – General Assembly: Empowering Tomorrow"
-                            class="portfolio-img">
+                        <img src="assets/images/c10.jpg" alt="Certificate of Appreciation – General Assembly: Empowering Tomorrow" class="portfolio-img">
                         <h3>Certificate of Appreciation – General Assembly: Empowering Tomorrow</h3>
                         <p>Issuer: Institute of Computer Engineers of the Philippines – Student Edition</p>
                         <p>Issued Jan 2024</p>
@@ -229,16 +213,12 @@
                     <div class="portfolio-item" data-category="skills">
                         <i class="fas fa-cogs"></i>
                         <h3>Technical Skills</h3>
-                        <p>Ethical Hacking · Penetration Testing · Network Security · Vulnerability Assessment · Data
-                            Analytics (SQL, Excel, Tableau) · Python Programming · Debugging · Web Development · Data
-                            Science Basics · Server & Data Center Management</p>
+                        <p>Ethical Hacking · Penetration Testing · Network Security · Vulnerability Assessment · Data Analytics (SQL, Excel, Tableau) · Python Programming · Debugging · Web Development · Data Science Basics · Server & Data Center Management</p>
                     </div>
                     <div class="portfolio-item" data-category="skills">
                         <i class="fas fa-user-tie"></i>
                         <h3>Professional Skills</h3>
-                        <p>Career Development · Personal Branding · Public Speaking · Professional Networking · Business
-                            Etiquette · Team Collaboration · Problem Solving · Strategic Planning · Creativity &
-                            Innovation · Adaptability</p>
+                        <p>Career Development · Personal Branding · Public Speaking · Professional Networking · Business Etiquette · Team Collaboration · Problem Solving · Strategic Planning · Creativity & Innovation · Adaptability</p>
                     </div>
                 </div>
 
@@ -251,72 +231,54 @@
             </div>
         </section>
 
-        <!-- Inlined Services Section -->
+        <!-- Services Section -->
         <section class="services" id="services">
             <div class="section-container bg-white">
                 <h2>Services</h2>
-                <p>I provide web development, database management, and system automation services tailored for
-                    businesses and individuals. From creating responsive websites to building efficient automation tools
-                    and ensuring secure, data-driven solutions, I focus on delivering scalable and user-friendly systems
-                    that help clients streamline operations and achieve their goals.</p>
+                <p>I provide web development, database management, and system automation services tailored for businesses and individuals. From creating responsive websites to building efficient automation tools and ensuring secure, data-driven solutions, I focus on delivering scalable and user-friendly systems that help clients streamline operations and achieve their goals.</p>
 
                 <div class="services-list">
                     <div class="service-item">
                         <i class="fas fa-code"></i>
                         <h3>Web Development & Design</h3>
-                        <p class="service-description">Custom website development (PHP, Laravel, JavaScript, Bootstrap,
-                            Node.js). Portfolio, business, and e-commerce websites. Responsive and mobile-friendly UI/UX
-                            design. Website optimization (speed, SEO basics, usability improvements).</p>
+                        <p class="service-description">Custom website development (PHP, Laravel, JavaScript, Bootstrap, Node.js). Portfolio, business, and e-commerce websites. Responsive and mobile-friendly UI/UX design. Website optimization (speed, SEO basics, usability improvements).</p>
                         <a href="#" class="see-more">See more...</a>
                     </div>
                     <div class="service-item">
                         <i class="fas fa-palette"></i>
                         <h3>UI/UX Design</h3>
-                        <p class="service-description">Designing intuitive and visually appealing user interfaces with a
-                            focus on user experience,
-                            ensuring seamless interaction and engagement. Responsive and mobile-friendly designs.</p>
+                        <p class="service-description">Designing intuitive and visually appealing user interfaces with a focus on user experience, ensuring seamless interaction and engagement. Responsive and mobile-friendly designs.</p>
                         <a href="#" class="see-more">See more...</a>
                     </div>
                     <div class="service-item">
                         <i class="fas fa-cogs"></i>
                         <h3>System & Process Automation</h3>
-                        <p class="service-description">Business process automation (like your iSyn-app project).
-                            Inventory, sales, and voucher management system development. Workflow automation
-                            (small-scale ERP-style solutions). API integration for third-party tools (REST API, Facebook
-                            API, etc.).</p>
+                        <p class="service-description">Business process automation (like your iSyn-app project). Inventory, sales, and voucher management system development. Workflow automation (small-scale ERP-style solutions). API integration for third-party tools (REST API, Facebook API, etc.).</p>
                         <a href="#" class="see-more">See more...</a>
                     </div>
                     <div class="service-item">
                         <i class="fas fa-user-tie"></i>
                         <h3>IT & Security Services</h3>
-                        <p class="service-description">Cybersecurity assessment (basic vulnerability testing, CEH
-                            fundamentals). Data protection strategies for small businesses. Ethical hacking basics &
-                            vulnerability scanning. Secure coding practices in web applications. Version control setup
-                            (Git/GitHub) and deployment assistance. Website hosting setup (XAMPP, InfinityFree, Netlify,
-                            etc.). Troubleshooting and debugging existing systems. Consultation for startups (system
-                            planning, scalability advice).</p>
+                        <p class="service-description">Cybersecurity assessment (basic vulnerability testing, CEH fundamentals). Data protection strategies for small businesses. Ethical hacking basics & vulnerability scanning. Secure coding practices in web applications. Version control setup (Git/GitHub) and deployment assistance. Website hosting setup (XAMPP, InfinityFree, Netlify, etc.). Troubleshooting and debugging existing systems. Consultation for startups (system planning, scalability advice).</p>
                         <a href="#" class="see-more">See more...</a>
                     </div>
                     <div class="service-item">
                         <i class="fas fa-chart-bar"></i>
                         <h3>Data Analytics & Reporting</h3>
-                        <p class="service-description">SQL-based data analysis and reporting. Data visualization (Excel,
-                            Tableau). Business insights from sales, inventory, or system logs.</p>
+                        <p class="service-description">SQL-based data analysis and reporting. Data visualization (Excel, Tableau). Business insights from sales, inventory, or system logs.</p>
                         <a href="#" class="see-more">See more...</a>
                     </div>
                     <div class="service-item">
                         <i class="fas fa-shield-alt"></i>
                         <h3>Cybersecurity</h3>
-                        <p class="service-description">Implementing robust security measures and best practices to
-                            protect your digital assets and
-                            ensure data integrity. Cybersecurity assessment, ethical hacking, and secure coding.</p>
+                        <p class="service-description">Implementing robust security measures and best practices to protect your digital assets and ensure data integrity. Cybersecurity assessment, ethical hacking, and secure coding.</p>
                         <a href="#" class="see-more">See more...</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Inlined Contact Section -->
+        <!-- Contact Section -->
         <section class="contact" id="contact">
             <div class="section-container bg-white">
                 <h2>Contact</h2>
@@ -340,10 +302,7 @@
                             </div>
                         </div>
                         <div class="map-container">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.1234567890123!2d121.123456789!3d15.123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c123456789ab%3A0x123456789abcdef!2sRizal%2C%20Nueva%20Ecija%2C%20Philippines!5e0!3m2!1sen!2sus!4v1610000000000!5m2!1sen!2sus"
-                                width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
-                            </iframe>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.1234567890123!2d121.123456789!3d15.123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c123456789ab%3A0x123456789abcdef!2sRizal%2C%20Nueva%20Ecija%2C%20Philippines!5e0!3m2!1sen!2sus!4v1610000000000!5m2!1sen!2sus" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                         </div>
                     </div>
 
@@ -369,15 +328,18 @@
                             </div>
                             <button type="submit" class="btn btn-primary">Send Message</button>
                         </form>
-                        <div id="notification"
-                            style="display:none; position: fixed; top: 20px; right: 20px; background-color: #4CAF50; color: white; padding: 15px; border-radius: 5px; z-index: 1000; max-width: 300px; word-wrap: break-word;">
-                        </div>
+                        <div id="notification" style="display:none; position: fixed; top: 20px; right: 20px; background-color: #4CAF50; color: white; padding: 15px; border-radius: 5px; z-index: 1000; max-width: 300px; word-wrap: break-word;"></div>
                     </div>
                 </div>
+            </div>
         </section>
-        <?php include 'assets/includes/footer.php'; ?>
+
+        <footer class="site-footer">
+            <div class="container footer-content">
+                <p>&copy; 2025 Zoren A. Corbillon. All rights reserved.</p>
+            </div>
+        </footer>
     </main>
     <script src="assets/css-js/main.js"></script>
 </body>
-
 </html>
