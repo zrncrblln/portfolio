@@ -1,5 +1,0 @@
-- [x] Update index.php: Remove PHP include for send_email.php and PHP form handling code
-- [x] Update index.php: Change form action to Formspree endpoint and remove onsubmit
-- [x] Update assets/css-js/main.js: Remove EmailJS code and add Formspree JS integration
-- [x] Add Formspree script to index.php head
-- [ ] Test form submission
