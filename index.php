@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="about-content">
                     <img src="assets/images/zz.JPG" alt="Zoren Corbillon" class="about-image">
                     <div class="about-details">
-                        <h3>UI/UX Designer & Web Developer.</h3>
+                        <h3>Software Engineer & Web Developer.</h3>
                         <p><em> Transforming ideas into secure, modern, and visually stunning digital experiences.</em>
                         </p>
                         <div class="about-info">
