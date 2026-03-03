@@ -151,7 +151,7 @@ export default function Navbar() {
           mobileOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="rounded-2xl bg-background/95 backdrop-blur-xl border border-border p-2 shadow-[0_8px_32px_rgba(0,0,0,0.3)]">
+        <div className="rounded-2xl bg-background/95 backdrop-blur-xl border border-border p-2 shadow-lg">
           {NAV_LINKS.map((link, index) => (
             <a
               key={link.href}

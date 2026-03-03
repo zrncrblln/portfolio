@@ -1,13 +1,13 @@
-import { useScrollReveal } from '@/hooks/useScrollReveal';
-import { Github, Linkedin } from 'lucide-react';
-import profilePhoto from '@/assets/profile-placeholder.jpg';
+import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { Github, Linkedin } from "lucide-react";
+import profilePhoto from "@/assets/profile-placeholder.jpg";
 
 const INFO = [
-  { label: 'Name', value: 'Zoren A. Corbillon' },
-  { label: 'Role', value: 'Full Stack Developer' },
-  { label: 'Stack', value: 'React · Laravel · MySQL' },
-  { label: 'Location', value: 'Rizal, Nueva Ecija, PH' },
-  { label: 'Email', value: 'zorencorbillon@gmail.com' },
+  { label: "Name", value: "Zoren A. Corbillon" },
+  { label: "Role", value: "Junior Full Stack Developer" },
+  { label: "Stack", value: "React · Laravel · MySQL" },
+  { label: "Location", value: "Rizal, Nueva Ecija, PH" },
+  { label: "Email", value: "zorencorbillon@gmail.com" },
 ];
 
 export default function About() {
@@ -21,13 +21,18 @@ export default function About() {
           <div className="lg:col-span-3">
             <h2 className="scroll-reveal section-heading">About Me</h2>
             <div className="scroll-reveal mt-6 mb-6 w-32 h-32 rounded-2xl overflow-hidden border border-border shadow-md">
-              <img src={profilePhoto} alt="Zoren Corbillon" className="w-full h-full object-cover" />
+              <img
+                src={profilePhoto}
+                alt="Zoren Corbillon"
+                className="w-full h-full object-cover"
+              />
             </div>
             <p className="scroll-reveal text-muted-foreground leading-[1.7] text-base">
-              I'm Zoren, a Computer Engineering graduate and Full Stack Developer
-              who builds fast, scalable web applications with clean, maintainable code.
-              I specialize in React and Laravel, with a strong focus on performance,
-              responsive design, and meaningful user experiences.
+              I'm Zoren, a Computer Engineering graduate and Full Stack
+              Developer who builds fast, scalable web applications with clean,
+              maintainable code. I specialize in React and Laravel, with a
+              strong focus on performance, responsive design, and meaningful
+              user experiences.
             </p>
             <p className="scroll-reveal mt-4 text-muted-foreground leading-[1.7] text-base">
               Currently open to junior to mid-level full stack roles.
