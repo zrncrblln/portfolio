@@ -1,6 +1,8 @@
+import { useState, useEffect } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Github, Linkedin } from "lucide-react";
-import profilePhoto from "@/assets/profile-placeholder.jpg";
+import profilePhotoLight from "@/assets/hero.png";
+import profilePhotoDark from "@/assets/hero-2.png";
 
 const INFO = [
   { label: "Name", value: "Zoren A. Corbillon" },
@@ -12,6 +14,25 @@ const INFO = [
 
 export default function About() {
   const ref = useScrollReveal();
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    // Check initial dark mode state
+    const checkDarkMode = () => {
+      setIsDark(document.documentElement.classList.contains("dark"));
+    };
+
+    checkDarkMode();
+
+    // Listen for dark mode changes
+    const observer = new MutationObserver(checkDarkMode);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section id="about" className="section-padding">
@@ -22,9 +43,9 @@ export default function About() {
             <h2 className="scroll-reveal section-heading">About Me</h2>
             <div className="scroll-reveal mt-6 mb-6 w-32 h-32 rounded-2xl overflow-hidden border border-border shadow-md">
               <img
-                src={profilePhoto}
+                src={isDark ? profilePhotoDark : profilePhotoLight}
                 alt="Zoren Corbillon"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-opacity duration-300 ease-in-out"
               />
             </div>
             <p className="scroll-reveal text-muted-foreground leading-[1.7] text-base">
