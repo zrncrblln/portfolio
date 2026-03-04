@@ -133,7 +133,7 @@ export default function Hero() {
               <img
                 src={isDark ? logoDark : logo}
                 alt="Zoren Corbillon"
-                className="w-64 h-64 object-contain drop-shadow-2xl animate-float-slow transition-all duration-500 ease-in-out"
+                className="w-72 h-72 object-contain drop-shadow-2xl animate-float-slow transition-all duration-500 ease-in-out"
               />
             </div>
 
