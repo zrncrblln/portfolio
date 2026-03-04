@@ -167,7 +167,14 @@ export default function Hero3DBackground() {
       animationId: 0,
     };
 
+    // Start animation and store the animation ID
+    const animationId = requestAnimationFrame(animate);
+    sceneRef.current.animationId = animationId;
+
     return () => {
+      // Cancel the animation loop to prevent WebGL context issues
+      cancelAnimationFrame(animationId);
+
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("resize", handleResize);
 
@@ -175,9 +182,16 @@ export default function Hero3DBackground() {
         containerRef.current.removeChild(renderer.domElement);
       }
 
-      renderer.dispose();
+      // Dispose all geometries
       icoGeometry.dispose();
       torusGeometry.dispose();
+
+      // Dispose all materials
+      icoMaterial.dispose();
+      torusMaterial.dispose();
+
+      // Dispose renderer
+      renderer.dispose();
     };
   }, []);
 

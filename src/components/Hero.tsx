@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import logo from "@/assets/logo.png";
 import logoDark from "@/assets/logo-2.png";
@@ -77,12 +78,12 @@ export default function Hero() {
               >
                 View My Work →
               </a>
-              <a
-                href="/cv"
+              <Link
+                to="/cv"
                 className="inline-flex items-center px-8 py-4 rounded-full border-2 border-foreground/20 text-foreground font-body font-semibold text-base transition-all duration-300 hover:bg-foreground hover:text-background hover:border-foreground"
               >
                 Download CV
-              </a>
+              </Link>
             </div>
 
             <div className="scroll-reveal mt-12 flex items-center gap-8">
