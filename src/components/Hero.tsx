@@ -56,13 +56,13 @@ export default function Hero() {
             </div>
 
             <p className="scroll-reveal section-label text-accent">
-              // FULL STACK DEVELOPER
+              // JUNIOR FULL STACK DEVELOPER
             </p>
 
             <h1 className="scroll-reveal font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] text-foreground mt-4">
-              Zoren
+              Engineered
               <br />
-              Corbillon
+              For Excellence
             </h1>
 
             <p className="scroll-reveal mt-6 text-muted-foreground text-lg md:text-xl leading-relaxed max-w-[500px]">
