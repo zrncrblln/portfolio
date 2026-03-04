@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import logo from "@/assets/logo.png";
 import logoDark from "@/assets/logo-2.png";
@@ -74,16 +73,22 @@ export default function Hero() {
             <div className="scroll-reveal flex flex-wrap gap-4 mt-10">
               <a
                 href="#work"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document
+                    .getElementById("work")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }}
                 className="inline-flex items-center px-8 py-4 rounded-full bg-accent text-foreground font-body font-semibold text-base transition-all duration-300 hover:brightness-110 hover:scale-105 hover:shadow-[0_0_30px_rgba(234,179,8,0.3)]"
               >
                 View My Work →
               </a>
-              <Link
-                to="/cv"
+              <a
+                href="/cv"
                 className="inline-flex items-center px-8 py-4 rounded-full border-2 border-foreground/20 text-foreground font-body font-semibold text-base transition-all duration-300 hover:bg-foreground hover:text-background hover:border-foreground"
               >
                 Download CV
-              </Link>
+              </a>
             </div>
 
             <div className="scroll-reveal mt-12 flex items-center gap-8">

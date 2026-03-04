@@ -1,14 +1,21 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const NAV_LINKS = [
-  { label: "About", href: "/about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Work", href: "#work" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", href: "about" },
+  { label: "Skills", href: "skills" },
+  { label: "Work", href: "work" },
+  { label: "Contact", href: "contact" },
 ];
+
+// Smooth scroll function
+const scrollToSection = (id: string) => {
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({ behavior: "smooth" });
+  }
+};
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -69,6 +76,12 @@ export default function Navbar() {
           {/* Monogram */}
           <a
             href="#hero"
+            onClick={(e) => {
+              e.preventDefault();
+              document
+                .getElementById("hero")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
             className="flex items-center justify-center w-8 h-8 rounded-lg bg-foreground text-background font-display text-sm font-bold shrink-0"
           >
             ZC
@@ -76,56 +89,44 @@ export default function Navbar() {
 
           {/* Desktop Links - Centered with flex-1 */}
           <div className="hidden lg:flex flex-1 items-center justify-center gap-4 xl:gap-6">
-            {NAV_LINKS.map((link) =>
-              link.href.startsWith("#") ? (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className={`px-2 py-1.5 text-sm font-body transition-all duration-200 rounded-lg hover:bg-secondary/50 ${
-                    activeSection === link.href.slice(1)
-                      ? "text-accent font-medium"
-                      : "text-foreground/80 hover:text-accent"
-                  }`}
-                >
-                  {link.label}
-                </a>
-              ) : (
-                <Link
-                  key={link.href}
-                  to={link.href}
-                  className={`px-2 py-1.5 text-sm font-body transition-all duration-200 rounded-lg hover:bg-secondary/50 text-foreground/80 hover:text-accent`}
-                >
-                  {link.label}
-                </Link>
-              ),
-            )}
+            {NAV_LINKS.map((link) => (
+              <a
+                key={link.href}
+                href={`#${link.href}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(link.href);
+                }}
+                className={`px-2 py-1.5 text-sm font-body transition-all duration-200 rounded-lg hover:bg-secondary/50 ${
+                  activeSection === link.href
+                    ? "text-accent font-medium"
+                    : "text-foreground/80 hover:text-accent"
+                }`}
+              >
+                {link.label}
+              </a>
+            ))}
           </div>
 
           {/* Tablet Links - Visible on md but hidden on lg */}
           <div className="hidden md:flex lg:hidden flex-1 items-center justify-center gap-2">
-            {NAV_LINKS.map((link) =>
-              link.href.startsWith("#") ? (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className={`px-2 py-1.5 text-sm font-body transition-all duration-200 rounded-lg hover:bg-secondary/50 ${
-                    activeSection === link.href.slice(1)
-                      ? "text-accent font-medium"
-                      : "text-foreground/80 hover:text-accent"
-                  }`}
-                >
-                  {link.label}
-                </a>
-              ) : (
-                <Link
-                  key={link.href}
-                  to={link.href}
-                  className={`px-2 py-1.5 text-sm font-body transition-all duration-200 rounded-lg hover:bg-secondary/50 text-foreground/80 hover:text-accent`}
-                >
-                  {link.label}
-                </Link>
-              ),
-            )}
+            {NAV_LINKS.map((link) => (
+              <a
+                key={link.href}
+                href={`#${link.href}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(link.href);
+                }}
+                className={`px-2 py-1.5 text-sm font-body transition-all duration-200 rounded-lg hover:bg-secondary/50 ${
+                  activeSection === link.href
+                    ? "text-accent font-medium"
+                    : "text-foreground/80 hover:text-accent"
+                }`}
+              >
+                {link.label}
+              </a>
+            ))}
           </div>
 
           {/* Dark Mode Toggle - Single Icon with Smooth Transition */}
@@ -173,37 +174,25 @@ export default function Navbar() {
         }`}
       >
         <div className="rounded-2xl bg-background/95 backdrop-blur-xl border border-border p-2 shadow-lg">
-          {NAV_LINKS.map((link, index) =>
-            link.href.startsWith("#") ? (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={() => setMobileOpen(false)}
-                className={`block py-3 px-4 text-foreground font-body text-base rounded-xl hover:bg-secondary/50 hover:text-accent transition-all duration-200 ${
-                  activeSection === link.href.slice(1)
-                    ? "text-accent bg-secondary/30"
-                    : ""
-                }`}
-                style={{
-                  transitionDelay: mobileOpen ? `${index * 50}ms` : "0ms",
-                }}
-              >
-                {link.label}
-              </a>
-            ) : (
-              <Link
-                key={link.href}
-                to={link.href}
-                onClick={() => setMobileOpen(false)}
-                className={`block py-3 px-4 text-foreground font-body text-base rounded-xl hover:bg-secondary/50 hover:text-accent transition-all duration-200`}
-                style={{
-                  transitionDelay: mobileOpen ? `${index * 50}ms` : "0ms",
-                }}
-              >
-                {link.label}
-              </Link>
-            ),
-          )}
+          {NAV_LINKS.map((link, index) => (
+            <a
+              key={link.href}
+              href={`#${link.href}`}
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection(link.href);
+                setMobileOpen(false);
+              }}
+              className={`block py-3 px-4 text-foreground font-body text-base rounded-xl hover:bg-secondary/50 hover:text-accent transition-all duration-200 ${
+                activeSection === link.href ? "text-accent bg-secondary/30" : ""
+              }`}
+              style={{
+                transitionDelay: mobileOpen ? `${index * 50}ms` : "0ms",
+              }}
+            >
+              {link.label}
+            </a>
+          ))}
           {/* Mobile Dark Mode Toggle */}
           <div className="border-t border-border mt-2 pt-2">
             <button

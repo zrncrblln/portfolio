@@ -144,10 +144,8 @@ export default function Hero3DBackground() {
       camera.lookAt(scene.position);
 
       renderer.render(scene, camera);
-      requestAnimationFrame(animate);
+      sceneRef.current!.animationId = requestAnimationFrame(animate);
     };
-
-    animate();
 
     // Handle resize
     const handleResize = () => {
@@ -173,7 +171,9 @@ export default function Hero3DBackground() {
 
     return () => {
       // Cancel the animation loop to prevent WebGL context issues
-      cancelAnimationFrame(animationId);
+      if (sceneRef.current?.animationId) {
+        cancelAnimationFrame(sceneRef.current.animationId);
+      }
 
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("resize", handleResize);
