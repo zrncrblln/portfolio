@@ -74,7 +74,7 @@ const OTHER_EXPERIENCE = [
     title: "Family Business — Retail, Agriculture & Equipment Operations",
     date: "1997 - Present · Ongoing",
     bullets: [
-      "Actively supported the family's multi-operation business covering a retail store, rice and vegetable farming, and agricultural harvesting using a reaper/combine harvester.",
+      "Actively supported the family's multi-operation business covering a retail store, rice and vegetable farming, and agricultural harvesting using a tractors and harvester.",
       "Gained hands-on experience in inventory management, daily store operations, customer-facing retail, and coordinating seasonal agricultural workflows.",
     ],
   },

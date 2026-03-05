@@ -14,8 +14,8 @@ const SECTIONS = [
   "hero",
   "about",
   "skills",
-  "work",
   "experience",
+  "work",
   "certifications",
   "contact",
 ];
@@ -29,8 +29,8 @@ const Index = () => {
       <Hero />
       <About />
       <Skills />
-      <Projects />
       <Experience />
+      <Projects />
       <Certifications />
       <Contact />
       <Footer />
