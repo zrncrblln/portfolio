@@ -138,13 +138,26 @@ export default function Experience() {
                 <h3 className="text-lg font-body font-semibold text-foreground group-hover:text-accent transition-colors">
                   Other Experience
                 </h3>
-                <span className="text-muted-foreground text-sm">
-                  {showOther ? "▲" : "▼"}
+                <span
+                  className="text-muted-foreground text-sm transition-transform duration-300 ease-in-out"
+                  style={{
+                    transform: showOther ? "rotate(180deg)" : "rotate(0deg)",
+                  }}
+                >
+                  ▼
                 </span>
               </button>
 
-              {showOther && (
-                <div className="mt-4 space-y-6 pl-4 border-l-2 border-border/50">
+              {/* Smooth dropdown animation */}
+              <div
+                className="overflow-hidden transition-all duration-300 ease-in-out"
+                style={{
+                  maxHeight: showOther ? "500px" : "0",
+                  opacity: showOther ? 1 : 0,
+                  marginTop: showOther ? "16px" : "0",
+                }}
+              >
+                <div className="space-y-6 pl-4 border-l-2 border-border/50">
                   {OTHER_EXPERIENCE.map((item, i) => (
                     <div key={i}>
                       <h4 className="text-base font-body font-semibold text-foreground">
@@ -171,7 +184,7 @@ export default function Experience() {
                     </div>
                   ))}
                 </div>
-              )}
+              </div>
             </div>
           </div>
         </div>
