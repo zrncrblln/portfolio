@@ -12,7 +12,8 @@ export default function Hero3DBackground() {
   } | null>(null);
 
   useEffect(() => {
-    if (!containerRef.current) return;
+    const container = containerRef.current;
+    if (!container) return;
 
     // Scene setup
     const scene = new THREE.Scene();
@@ -30,7 +31,7 @@ export default function Hero3DBackground() {
     });
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    containerRef.current.appendChild(renderer.domElement);
+    container.appendChild(renderer.domElement);
 
     // Create geometric shapes
     const objects: THREE.Mesh[] = [];
@@ -178,8 +179,9 @@ export default function Hero3DBackground() {
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("resize", handleResize);
 
-      if (containerRef.current && renderer.domElement) {
-        containerRef.current.removeChild(renderer.domElement);
+      // Use captured container reference to avoid stale closure
+      if (container && renderer.domElement) {
+        container.removeChild(renderer.domElement);
       }
 
       // Dispose all geometries
