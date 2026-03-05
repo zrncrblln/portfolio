@@ -29,7 +29,16 @@ const SKILLS = [
   {
     category: "Backend",
     icon: Server,
-    tags: ["PHP", "Laravel", "Node.js", "RESTful APIs", "Redis", "Apache"],
+    tags: [
+      "PHP",
+      "Laravel",
+      "Node.js",
+      "Java",
+      "C++",
+      "RESTful APIs",
+      "Redis",
+      "Apache",
+    ],
   },
   {
     category: "Database",

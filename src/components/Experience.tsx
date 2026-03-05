@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { ChevronDown } from "lucide-react";
 
 const ENTRIES = [
   {
@@ -25,7 +26,7 @@ const ENTRIES = [
     location: "Remote (Local Clients, Philippines)",
     bullets: [
       "Independently designing and building web solutions for local clients, handling projects end-to-end from requirements gathering to deployment.",
-      "Developed responsive websites and landing pages tailored to client branding and business goals using HTML, CSS, JavaScript, and Bootstrap",
+      "Developed responsive websites and landing pages tailored to client branding and business goals using modern frontend technologies including React, TypeScript, and Tailwind CSS",
       "Built custom web applications to support client workflows, handling both frontend UI and backend logic",
       "Managed full client communication cycles — from scoping and proposals to revisions and delivery",
     ],
@@ -51,7 +52,12 @@ const ENTRIES = [
     org: "Wesleyan University – Philippines",
     date: "Graduated August 2025",
     location: "Cabanatuan City, Nueva Ecija",
-    bullets: [],
+    bullets: [
+      "Completed comprehensive studies in computer hardware and software design, including microprocessors, embedded systems, and computer networks",
+      "Gained hands-on experience in programming languages such as C, C++, Java, and Python through academic projects and laboratory work",
+      "Developed strong analytical and problem-solving skills through capstone projects focusing on system design and implementation",
+      "Acquired knowledge in digital electronics, circuit design, and signal processing through theoretical coursework and practical experiments",
+    ],
   },
 ];
 
@@ -83,6 +89,11 @@ const OTHER_EXPERIENCE = [
 export default function Experience() {
   const ref = useScrollReveal();
   const [showOther, setShowOther] = useState(false);
+  const [expandedEntry, setExpandedEntry] = useState<number | null>(0);
+
+  const toggleEntry = (index: number) => {
+    setExpandedEntry(expandedEntry === index ? null : index);
+  };
 
   return (
     <section id="experience" className="section-padding">
@@ -94,35 +105,68 @@ export default function Experience() {
           {/* Timeline line */}
           <div className="absolute left-3 top-2 bottom-2 w-[2px] bg-border" />
 
-          <div className="space-y-12">
+          <div className="space-y-4">
             {ENTRIES.map((entry, i) => (
               <div key={i} className="scroll-reveal relative pl-10">
                 {/* Dot */}
                 <div className="absolute left-[7px] top-2 w-[10px] h-[10px] rounded-full bg-accent border-2 border-background" />
 
-                <h3 className="text-lg font-body font-semibold text-foreground">
-                  {entry.title}
-                  <span className="text-muted-foreground font-normal">
-                    {" "}
-                    — {entry.org}
-                  </span>
-                </h3>
-                <p className="mt-1 text-sm text-muted-foreground">
-                  {entry.date} · {entry.location}
-                </p>
-                {entry.bullets.length > 0 && (
-                  <ul className="mt-3 space-y-2">
-                    {entry.bullets.map((bullet, j) => (
-                      <li
-                        key={j}
-                        className="text-sm text-muted-foreground leading-relaxed flex gap-2"
-                      >
-                        <span className="text-accent mt-0.5 shrink-0">•</span>
-                        {bullet}
-                      </li>
-                    ))}
-                  </ul>
-                )}
+                {/* Collapsible Entry */}
+                <div className="border border-border rounded-xl bg-card/30 overflow-hidden">
+                  <button
+                    onClick={() => toggleEntry(i)}
+                    className="flex items-center justify-between w-full p-4 text-left hover:bg-card/50 transition-colors"
+                  >
+                    <div>
+                      <h3 className="text-lg font-body font-semibold text-foreground">
+                        {entry.title}
+                        <span className="text-muted-foreground font-normal">
+                          {" "}
+                          — {entry.org}
+                        </span>
+                      </h3>
+                      <p className="mt-1 text-sm text-muted-foreground">
+                        {entry.date} · {entry.location}
+                      </p>
+                    </div>
+                    <ChevronDown
+                      className={`w-5 h-5 text-muted-foreground transition-transform duration-300 ${
+                        expandedEntry === i ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+
+                  {/* Dropdown Content */}
+                  <div
+                    className="transition-all duration-300 ease-in-out overflow-hidden"
+                    style={{
+                      maxHeight: expandedEntry === i ? "500px" : "0",
+                      opacity: expandedEntry === i ? 1 : 0,
+                    }}
+                  >
+                    <div className="px-4 pb-4 pt-0">
+                      {entry.bullets.length > 0 ? (
+                        <ul className="space-y-2">
+                          {entry.bullets.map((bullet, j) => (
+                            <li
+                              key={j}
+                              className="text-sm text-muted-foreground leading-relaxed flex gap-2"
+                            >
+                              <span className="text-accent mt-0.5 shrink-0">
+                                •
+                              </span>
+                              {bullet}
+                            </li>
+                          ))}
+                        </ul>
+                      ) : (
+                        <p className="text-sm text-muted-foreground italic">
+                          Completed degree
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                </div>
               </div>
             ))}
 
