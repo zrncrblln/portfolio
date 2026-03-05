@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { Github, Linkedin } from "lucide-react";
+import { Github, Linkedin, Phone } from "lucide-react";
 import profilePhotoLight from "@/assets/hero.png";
 import profilePhotoDark from "@/assets/hero-2.png";
 
@@ -49,14 +49,15 @@ export default function About() {
               />
             </div>
             <p className="scroll-reveal text-muted-foreground leading-[1.7] text-base">
-              I'm Zoren, a Computer Engineering graduate and Full Stack
-              Developer who builds fast, scalable web applications with clean,
-              maintainable code. I specialize in React and Laravel, with a
-              strong focus on performance, responsive design, and meaningful
+              I'm Zoren, a Computer Engineer, Virtual Assistant and Junior Full
+              Stack Developer who builds fast, scalable web applications with
+              clean, maintainable code. I specialize in React and Laravel, with
+              a strong focus on performance, responsive design, and meaningful
               user experiences.
             </p>
             <p className="scroll-reveal mt-4 text-muted-foreground leading-[1.7] text-base">
-              Currently open to junior to mid-level full stack roles.
+              Currently open to junior development roles, freelance projects,
+              and remote VA opportunities.
             </p>
           </div>
 
@@ -94,6 +95,19 @@ export default function About() {
                   className="text-sm text-foreground hover:text-accent transition-colors duration-200 flex items-center gap-1.5"
                 >
                   <Linkedin size={14} /> zoren-corbillon
+                </a>
+              </div>
+              <div className="flex gap-4">
+                <span className="font-mono text-xs text-muted-foreground uppercase tracking-wider w-20 shrink-0 pt-0.5">
+                  WhatsApp
+                </span>
+                <a
+                  href="https://wa.me/639166100257"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-foreground hover:text-accent transition-colors duration-200 flex items-center gap-1.5"
+                >
+                  <Phone size={14} /> +639166100257
                 </a>
               </div>
             </div>

@@ -1,5 +1,5 @@
-import { useScrollReveal } from '@/hooks/useScrollReveal';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { Github, Linkedin, Mail, Phone } from "lucide-react";
 
 export default function Contact() {
   const ref = useScrollReveal();
@@ -24,14 +24,35 @@ export default function Contact() {
           </a>
         </div>
         <div className="scroll-reveal mt-8 flex items-center justify-center gap-6">
-          <a href="https://github.com/zrncrblln" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors duration-200">
+          <a
+            href="https://github.com/zrncrblln"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground hover:text-foreground transition-colors duration-200"
+          >
             <Github size={20} />
           </a>
-          <a href="https://linkedin.com/in/zoren-corbillon-96719a138" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors duration-200">
+          <a
+            href="https://linkedin.com/in/zoren-corbillon-96719a138"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground hover:text-foreground transition-colors duration-200"
+          >
             <Linkedin size={20} />
           </a>
-          <a href="mailto:zorencorbillon@gmail.com" className="text-muted-foreground hover:text-foreground transition-colors duration-200">
+          <a
+            href="mailto:zorencorbillon@gmail.com"
+            className="text-muted-foreground hover:text-foreground transition-colors duration-200"
+          >
             <Mail size={20} />
+          </a>
+          <a
+            href="https://wa.me/639166100257"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground hover:text-foreground transition-colors duration-200"
+          >
+            <Phone size={20} />
           </a>
         </div>
       </div>
