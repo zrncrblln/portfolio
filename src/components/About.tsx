@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { Github, Linkedin, Phone } from "lucide-react";
+import { Github, Linkedin, Phone, MapPin, Mail, User, Briefcase, Code } from "lucide-react";
 import profilePhotoLight from "@/assets/hero.png";
 import profilePhotoDark from "@/assets/hero-2.png";
 
@@ -68,7 +68,14 @@ export default function About() {
                   <span className="font-mono text-xs text-muted-foreground uppercase tracking-wider w-20 shrink-0 pt-0.5">
                     {item.label}
                   </span>
-                  <span className="text-sm text-foreground">{item.value}</span>
+                  <span className="text-sm text-foreground flex items-center gap-1.5">
+                    {item.label === "Name" && <User size={14} />}
+                    {item.label === "Role" && <Briefcase size={14} />}
+                    {item.label === "Stack" && <Code size={14} />}
+                    {item.label === "Location" && <MapPin size={14} />}
+                    {item.label === "Email" && <Mail size={14} />}
+                    {item.value}
+                  </span>
                 </div>
               ))}
               <div className="flex gap-4">
